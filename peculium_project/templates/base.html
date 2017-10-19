@@ -1,12 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
+{% load staticfiles %}
+
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
-    <meta charset="UTF-8">
-    {% block title %}Login{% endblock %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}PELICUIM{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">
+
+
+
+    {% block style %}
+
+    {% endblock %}
+
 </head>
+
 <body>
+
+
 {% block content %}
 
-{% endblock %}
+
+
+
+
+{% endblock content %}
+
+<!--
+
+
+FOOTER-->
+<footer>
+    <div class="copyright">
+        <div class="container col-md-6">
+            <p>Copyright © PECULIUM 2017. All right reserved.</p>
+        </div>
+    </div>
+</footer>
+
+
 </body>
 </html>

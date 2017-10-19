@@ -157,3 +157,22 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static_cdn")
 MEDIA_URL = "/media/"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media_cdn")
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+
+
+#######################
+# EMAIL CONFIGURATION #
+#######################
+
+DEFAULT_EMAIL_FROM = 'touzimortadha@gmail.com'
+DEFAULT_EMAIL_BCC = ''
+SERVER_EMAIL = ''
+
+EMAIL_USE_SSL = False
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'touzimortadha@gmail.com'
+EMAIL_HOST_PASSWORD = '27069415'
+EMAIL_PORT = 587

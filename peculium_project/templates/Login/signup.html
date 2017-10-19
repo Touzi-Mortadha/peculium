@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block esp %}
+    <br><br><br>
+
+{% endblock %}
+
+{% block style %}
+
+{% endblock %}
+
+{% block title %}
+    Signup
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+
+            <h1 class="text-center"><span style="color: #CD5C5C;font-family: 'Sansita' ">Sign up</span></h1>
+            <br><br><br>
+        </div>
+        <div class="row">
+            <div class="col-sm-offset-1 col-sm-2">
+            </div>
+            <div class="col-sm-6">
+
+                <form method="post">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="fieldWrapper">
+                            <p>
+                                {{ field.label_tag }}<br>
+                                {{ field }}
+                                {% for error in field.errors %}
+                                    <p style="color: red">{{ error }}</p>
+                                {% endfor %}
+                            </p>
+                        </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-lg btn-primary btn-block signup-btn"
+                            style='background-color:#CD5C5C'>Sign up
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <br><br><br><br><br><br><br><br><br>
+
+
+
+{% endblock %}
