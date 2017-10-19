@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/1.11/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
+#user peculium
+#pass:syspro0000
 
 import os
 
@@ -26,6 +28,28 @@ SECRET_KEY = '*yqlfi=11r=1hzzr+he4waf-@az1^s9)c$38#oweqb#d@%w@k@'
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
+
+#######################
+# USER AUTHENTICATION #
+#######################
+
+# AUTH_USER_MODEL = 'accounts.Member'
+
+LOGIN_REDIRECT_URL = '/home/user/profile/'
+
+LOGIN_URL = '/home/user/login/'
+
+LOGOUT_REDIRECT_URL = '/home/'
+
+# AUTHENTICATION_BACKENDS = (
+#     'apps.cores.auth_backends.AccountBackend',
+# )
+
+###########################
+# END USER AUTHENTICATION #
+###########################
+
+
 
 
 # Application definition
