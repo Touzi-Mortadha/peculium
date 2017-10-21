@@ -22,7 +22,7 @@ class IndexView(TemplateView):
 
 
 class LoginUserView(auth_views.LoginView):
-    template_name = "Login/login.html"
+    template_name = "Login/login1.html"
     redirect_field_name = reverse_lazy("profile")
 
 
@@ -48,9 +48,9 @@ class signup(View):
                 'uid': urlsafe_base64_encode(force_bytes(user.pk)),
                 'token': account_activation_token.make_token(user),
             })
-            user.email_user(subject, message)
+            # user.email_user(subject, message)
             toemail = form.cleaned_data.get('email')
-            email = EmailMessage(subject, message, to=[toemail])
+            email = EmailMessage(subject, body=message, to=[toemail])
             email.send()
             return redirect('account_activation_sent')
         return render(request, self.template_name, {'form': form})
@@ -63,6 +63,10 @@ class signup(View):
 @method_decorator(login_required, name='dispatch')
 class UpdateUserView(TemplateView):
     template_name = "profile.html"
+    def get_context_data(self, **kwargs):
+        context = super(UpdateUserView, self).get_context_data(**kwargs)
+        context['user'] = self.request.user
+        return context
 
 
 def activate(request, uidb64, token):
