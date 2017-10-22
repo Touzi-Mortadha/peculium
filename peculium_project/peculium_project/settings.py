@@ -35,11 +35,11 @@ ALLOWED_HOSTS = ["*"]
 
 # AUTH_USER_MODEL = 'accounts.Member'
 
-LOGIN_REDIRECT_URL = '/home/user/profile/'
+LOGIN_REDIRECT_URL = '/user/profile/'
 
-LOGIN_URL = '/home/user/login/'
+LOGIN_URL = '/user/login/'
 
-LOGOUT_REDIRECT_URL = '/home/'
+LOGOUT_REDIRECT_URL = '/'
 
 # AUTHENTICATION_BACKENDS = (
 #     'apps.cores.auth_backends.AccountBackend',

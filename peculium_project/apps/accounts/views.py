@@ -17,16 +17,25 @@ from .tokens import account_activation_token
 from django.core.mail import EmailMessage
 from django.utils.html import strip_tags
 
+
 class IndexView(TemplateView):
     template_name = "home.html"
 
 
 class LoginUserView(auth_views.LoginView):
-    template_name = "Login/login1.html"
-    redirect_field_name = reverse_lazy("profile")
-
+    template_name = "Login/login.html"
+    #TODO
+    def dispatch(self, request, *args, **kwargs):
+        if self.request.user.is_superuser:
+            print("yesssssss")
+            self.redirect_field_name = reverse_lazy("index_view")
+        else:
+            print("noooooooo")
+            self.redirect_field_name = reverse_lazy("index_view")
+        return super(LoginUserView, self).dispatch(request, *args, **kwargs)
 
 class LogoutUserView(auth_views.LogoutView):
+    #TODO
     redirect_field_name = reverse_lazy("login")
 
 
@@ -63,11 +72,20 @@ class signup(View):
 @method_decorator(login_required, name='dispatch')
 class UpdateUserView(TemplateView):
     template_name = "profile.html"
+
     def get_context_data(self, **kwargs):
         context = super(UpdateUserView, self).get_context_data(**kwargs)
         context['user'] = self.request.user
         return context
 
+@method_decorator(login_required, name='dispatch')
+class UpdateAdminView(TemplateView):
+    template_name = "admin.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(UpdateAdminView, self).get_context_data(**kwargs)
+        context['user'] = self.request.user
+        return context
 
 def activate(request, uidb64, token):
     try:
