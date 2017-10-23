@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import UserProfile
+from .models import UserProfile, ConfiTCL
 
 
 class SignUpForm(UserCreationForm):
@@ -29,3 +29,12 @@ class SignUpProfileForm(forms.ModelForm):
         self.fields['adresse'].widget.attrs.update({'class': 'form-control input-lg'})
 
 
+class ConfigPCLForm(forms.ModelForm):
+    """This class represents the Config Email form"""
+    class Meta:
+        model = ConfiTCL
+        fields = ('number_of_tokens', 'amount',)
+        widgets = {
+            'number_of_tokens': forms.TextInput(attrs={'class': 'form-control'}),
+            'amount': forms.TextInput(attrs={'class': 'form-control'}),
+        }

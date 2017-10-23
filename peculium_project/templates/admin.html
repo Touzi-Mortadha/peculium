@@ -78,7 +78,7 @@
                        data-close-others="true">
                         <img alt="" class="img-circle" src='{% static "assets/admin/layout/img/avatar3_small.jpg" %}'/>
                         <span class="username username-hide-on-mobile">
-					User </span>
+					{{ user.username }} </span>
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-default">
@@ -203,18 +203,20 @@
                         </div>
                         <div class="portlet-body form">
                             <!-- BEGIN FORM-->
-                            <form action="#" class="form-horizontal">
+                            <form  class="form-horizontal" method="POST">{% csrf_token %}
                                 <div class="form-body">
                                     <div class="row">
                                         <div class="form-group col-md-6">
                                             <div class="col-md-12">
-                                                <input class="form-control" placeholder="Price of Token in EURO"
-                                                       type="text">
+                                                {{ form.amount }}
+{#                                                <input id="id_amount" class="form-control" placeholder="Price of Token in EURO"#}
+{#                                                       type="text">#}
                                             </div>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <div class="col-md-12">
-                                                <input class="form-control" placeholder="Quantity" type="text">
+                                                {{ form.number_of_tokens }}
+{#                                                <input id="id_number_of_tokens" class="form-control" placeholder="Quantity" type="text">#}
                                             </div>
                                         </div>
                                         <div class="form-group col-md-7">

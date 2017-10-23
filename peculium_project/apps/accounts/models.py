@@ -5,6 +5,12 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 
+class ConfiTCL(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    number_of_tokens = models.IntegerField(blank=True, null=True)
+    amount = models.IntegerField(blank=True, null=True)
+
+
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     adresse = models.CharField(max_length=100, blank=True)
