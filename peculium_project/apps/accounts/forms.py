@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import UserProfile, ConfiTCL
+from .models import UserProfile
 
 
 class SignUpForm(UserCreationForm):
@@ -20,21 +20,13 @@ class SignUpForm(UserCreationForm):
         self.fields['password1'].widget.attrs.update({'class': 'form-control input-lg'})
         self.fields['password2'].widget.attrs.update({'class': 'form-control input-lg'})
 
-class SignUpProfileForm(forms.ModelForm):
-    class Meta:
-        model = UserProfile
-        fields = ('adresse',)
-    def __init__(self, *args, **kwargs):
-        super(SignUpProfileForm, self).__init__(*args, **kwargs)
-        self.fields['adresse'].widget.attrs.update({'class': 'form-control input-lg'})
+# class SignUpProfileForm(forms.ModelForm):
+#     class Meta:
+#         model = UserProfile
+#         fields = ('adresse',)
+#     def __init__(self, *args, **kwargs):
+#         super(SignUpProfileForm, self).__init__(*args, **kwargs)
+#         self.fields['adresse'].widget.attrs.update({'class': 'form-control input-lg'})
 
 
-class ConfigPCLForm(forms.ModelForm):
-    """This class represents the Config Email form"""
-    class Meta:
-        model = ConfiTCL
-        fields = ('number_of_tokens', 'amount',)
-        widgets = {
-            'number_of_tokens': forms.TextInput(attrs={'class': 'form-control'}),
-            'amount': forms.TextInput(attrs={'class': 'form-control'}),
-        }
+

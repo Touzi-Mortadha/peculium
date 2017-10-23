@@ -3,7 +3,8 @@ from django.contrib.auth import views as auth_views
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-from .forms import SignUpForm, ConfigPCLForm
+from .forms import SignUpForm
+from ..payment.forms import ConfigPCLForm
 from django.contrib.auth import login
 
 from django.contrib.auth.models import User
@@ -20,14 +21,12 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import user_passes_test
 from django.contrib.admin.views.decorators import staff_member_required
 from django.template.response import TemplateResponse
-from .models import ConfiTCL
+from ..payment.models import ConfiTCL
 
 
 class IndexView(TemplateView):
     template_name = "home.html"
 
-class PayementView(TemplateView):
-    template_name = "payement.html"
 
 class LoginUserView(auth_views.LoginView):
     template_name = "Login/login.html"
@@ -43,7 +42,6 @@ class LoginUserView(auth_views.LoginView):
 
 
 class LogoutUserView(auth_views.LogoutView):
-    # TODO
     redirect_field_name = reverse_lazy("login")
 
 
@@ -77,7 +75,6 @@ class signup(View):
         return render(request, self.template_name, {'form': form})
 
 
-
 class UpdateUserView(TemplateView):
     template_name = "profile.html"
 
@@ -89,13 +86,13 @@ class UpdateUserView(TemplateView):
     def get(self, request, *args, **kwargs):
         userr = User.objects.get(username='peculium')
         inst = ConfiTCL.objects.get(user=userr)
-        context = {'amount': inst.amount, 'number_of_tokens':inst.number_of_tokens,'user':self.request.user}
+        context = {'amount': inst.amount, 'number_of_tokens': inst.number_of_tokens, 'user': self.request.user}
         return TemplateResponse(request, self.template_name, context)
 
-    # def get_context_data(self, **kwargs):
-    #     context = super(UpdateUserView, self).get_context_data(**kwargs)
-    #     context['user'] = self.request.user
-    #     return context
+        # def get_context_data(self, **kwargs):
+        #     context = super(UpdateUserView, self).get_context_data(**kwargs)
+        #     context['user'] = self.request.user
+        #     return context
 
 
 class UpdateAdminView(TemplateView):
@@ -112,19 +109,22 @@ class UpdateAdminView(TemplateView):
         form = ConfigPCLForm(request.POST, instance=inst)
         if form.is_valid():
             form.save()
-        return TemplateResponse(request, self.template_name, {'form': form,'user':self.request.user, 'amount': inst.amount, 'number_of_tokens':inst.number_of_tokens})
+        return TemplateResponse(request, self.template_name,
+                                {'form': form, 'user': self.request.user, 'amount': inst.amount,
+                                 'number_of_tokens': inst.number_of_tokens})
 
     def get(self, request, *args, **kwargs):
         userr = User.objects.get(username=request.user)
         inst = ConfiTCL.objects.get(user=userr)
-        form=ConfigPCLForm(instance=inst)
-        context = {'form': form,'user':self.request.user,'amount': inst.amount, 'number_of_tokens':inst.number_of_tokens}
+        form = ConfigPCLForm(instance=inst)
+        context = {'form': form, 'user': self.request.user, 'amount': inst.amount,
+                   'number_of_tokens': inst.number_of_tokens}
         return TemplateResponse(request, self.template_name, context)
 
-    # def get_context_data(self, **kwargs):
-    #     context = super(UpdateAdminView, self).get_context_data(**kwargs)
-    #     context['user'] = self.request.user
-    #     return context
+        # def get_context_data(self, **kwargs):
+        #     context = super(UpdateAdminView, self).get_context_data(**kwargs)
+        #     context['user'] = self.request.user
+        #     return context
 
 
 def activate(request, uidb64, token):
