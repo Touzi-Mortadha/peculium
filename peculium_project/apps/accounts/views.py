@@ -86,7 +86,7 @@ class UpdateUserView(TemplateView):
     def get(self, request, *args, **kwargs):
         userr = User.objects.get(username='peculium')
         inst = ConfiTCL.objects.get(user=userr)
-        context = {'amount': inst.amount, 'number_of_tokens': inst.number_of_tokens, 'user': self.request.user}
+        context = {'amount': inst.PCL_amount, 'number_of_tokens': inst.number_of_PCL, 'user': self.request.user}
         return TemplateResponse(request, self.template_name, context)
 
         # def get_context_data(self, **kwargs):
@@ -110,15 +110,15 @@ class UpdateAdminView(TemplateView):
         if form.is_valid():
             form.save()
         return TemplateResponse(request, self.template_name,
-                                {'form': form, 'user': self.request.user, 'amount': inst.amount,
-                                 'number_of_tokens': inst.number_of_tokens})
+                                {'form': form, 'user': self.request.user, 'amount': inst.PCL_amount,
+                                 'number_of_tokens': inst.number_of_PCL})
 
     def get(self, request, *args, **kwargs):
         userr = User.objects.get(username=request.user)
         inst = ConfiTCL.objects.get(user=userr)
         form = ConfigPCLForm(instance=inst)
-        context = {'form': form, 'user': self.request.user, 'amount': inst.amount,
-                   'number_of_tokens': inst.number_of_tokens}
+        context = {'form': form, 'user': self.request.user, 'amount': inst.PCL_amount,
+                   'number_of_tokens': inst.number_of_PCL}
         return TemplateResponse(request, self.template_name, context)
 
         # def get_context_data(self, **kwargs):
@@ -139,7 +139,7 @@ def activate(request, uidb64, token):
         user.userprofile.email_confirmed = True
         user.save()
         login(request, user)
-        return redirect('index_view')
+        return redirect('profile')
     else:
         return render(request, 'activation_email/account_activation_invalid.html')
 

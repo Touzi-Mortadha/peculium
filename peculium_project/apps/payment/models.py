@@ -5,5 +5,5 @@ from django.contrib.auth.models import User
 
 class ConfiTCL(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    number_of_tokens = models.IntegerField(blank=True, null=True)
-    amount = models.IntegerField(blank=True, null=True)
+    number_of_PCL = models.IntegerField(blank=True, null=True)
+    PCL_amount = models.FloatField(blank=True, null=True)
