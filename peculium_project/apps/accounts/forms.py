@@ -11,6 +11,13 @@ class SignUpForm(UserCreationForm):
         model = User
         fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2',)
 
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        username = self.cleaned_data.get('username')
+        if email and User.objects.filter(email=email).exclude(username=username).exists():
+            raise forms.ValidationError(u'A user with that email already exists.')
+        return email
+
     def __init__(self, *args, **kwargs):
         super(SignUpForm, self).__init__(*args, **kwargs)
         self.fields['username'].widget.attrs.update({'class': 'form-control input-lg'})
