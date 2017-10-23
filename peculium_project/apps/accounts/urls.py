@@ -8,7 +8,7 @@ urlpatterns = [
     url(r'^user/login/', LoginUserView.as_view(), name='login'),
     url(r'^user/logout/', LogoutUserView.as_view(), name='logout'),
     url(r'^user/profile/', UpdateUserView.as_view(), name='profile'),
-    url(r'^user/admin/', UpdateAdminView.as_view(), name='admin'),
+    url(r'^user/admin/$', UpdateAdminView.as_view(), name='admin'),
     # sign up
     url(r'signup/$', signup.as_view(), name='signup'),
     # url(r'rest_password/$', ResetPassword.as_view(), name='rest_password'),

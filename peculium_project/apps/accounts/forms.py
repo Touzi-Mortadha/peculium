@@ -27,3 +27,5 @@ class SignUpProfileForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(SignUpProfileForm, self).__init__(*args, **kwargs)
         self.fields['adresse'].widget.attrs.update({'class': 'form-control input-lg'})
+
+

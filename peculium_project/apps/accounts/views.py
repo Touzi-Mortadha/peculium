@@ -16,6 +16,9 @@ from django.template.loader import render_to_string
 from .tokens import account_activation_token
 from django.core.mail import EmailMessage
 from django.utils.html import strip_tags
+from django.core.urlresolvers import reverse
+from django.contrib.auth.decorators import user_passes_test
+from django.contrib.admin.views.decorators import staff_member_required
 
 
 class IndexView(TemplateView):
@@ -24,18 +27,19 @@ class IndexView(TemplateView):
 
 class LoginUserView(auth_views.LoginView):
     template_name = "Login/login.html"
-    #TODO
-    def dispatch(self, request, *args, **kwargs):
-        if self.request.user.is_superuser:
-            print("yesssssss")
-            self.redirect_field_name = reverse_lazy("index_view")
+
+    def get_success_url(self):
+        url = self.get_redirect_url()
+        if url:
+            return url
+        elif self.request.user.is_superuser:
+            return reverse("admin")
         else:
-            print("noooooooo")
-            self.redirect_field_name = reverse_lazy("index_view")
-        return super(LoginUserView, self).dispatch(request, *args, **kwargs)
+            return reverse("profile")
+
 
 class LogoutUserView(auth_views.LogoutView):
-    #TODO
+    # TODO
     redirect_field_name = reverse_lazy("login")
 
 
@@ -69,23 +73,34 @@ class signup(View):
         return render(request, self.template_name, {'form': form})
 
 
-@method_decorator(login_required, name='dispatch')
+
 class UpdateUserView(TemplateView):
     template_name = "profile.html"
+
+    @method_decorator(user_passes_test(lambda u: not u.is_superuser))
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
 
     def get_context_data(self, **kwargs):
         context = super(UpdateUserView, self).get_context_data(**kwargs)
         context['user'] = self.request.user
         return context
 
-@method_decorator(login_required, name='dispatch')
+
 class UpdateAdminView(TemplateView):
     template_name = "admin.html"
+
+    @method_decorator(user_passes_test(lambda u: u.is_superuser))
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
 
     def get_context_data(self, **kwargs):
         context = super(UpdateAdminView, self).get_context_data(**kwargs)
         context['user'] = self.request.user
         return context
+
 
 def activate(request, uidb64, token):
     try:
