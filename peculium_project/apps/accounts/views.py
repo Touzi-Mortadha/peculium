@@ -26,6 +26,8 @@ from .models import ConfiTCL
 class IndexView(TemplateView):
     template_name = "home.html"
 
+class PayementView(TemplateView):
+    template_name = "payement.html"
 
 class LoginUserView(auth_views.LoginView):
     template_name = "Login/login.html"
@@ -110,13 +112,13 @@ class UpdateAdminView(TemplateView):
         form = ConfigPCLForm(request.POST, instance=inst)
         if form.is_valid():
             form.save()
-        return TemplateResponse(request, self.template_name, {'form': form,'user':self.request.user})
+        return TemplateResponse(request, self.template_name, {'form': form,'user':self.request.user, 'amount': inst.amount, 'number_of_tokens':inst.number_of_tokens})
 
     def get(self, request, *args, **kwargs):
         userr = User.objects.get(username=request.user)
         inst = ConfiTCL.objects.get(user=userr)
         form=ConfigPCLForm(instance=inst)
-        context = {'form': form,'user':self.request.user}
+        context = {'form': form,'user':self.request.user,'amount': inst.amount, 'number_of_tokens':inst.number_of_tokens}
         return TemplateResponse(request, self.template_name, context)
 
     # def get_context_data(self, **kwargs):
