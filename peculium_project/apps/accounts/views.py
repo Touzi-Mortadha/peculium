@@ -87,7 +87,6 @@ class UpdateUserView(TemplateView):
     def get(self, request, *args, **kwargs):
         userr = User.objects.get(username='peculium')
         inst = ConfiTCL.objects.get(user=userr)
-        print(inst.amount)
         context = {'amount': inst.amount, 'number_of_tokens':inst.number_of_tokens,'user':self.request.user}
         return TemplateResponse(request, self.template_name, context)
 
