@@ -1,9 +1,19 @@
 from django.conf.urls import url, include
-
 from django.contrib.auth import views as auth_views
 from . import views
 from .views import IndexView, LoginUserView, UpdateUserView, LogoutUserView, account_activation_sent, \
-    activate, signup, UpdateAdminView
+    activate, signup, UpdateAdminView, ConfiTCLViewSet
+
+pcl_list = views.ConfiTCLViewSet.as_view({
+    'get': 'list',
+    'post': 'create'
+})
+pcl_detail = views.ConfiTCLViewSet.as_view({
+    'get': 'retrieve',
+    'put': 'update',
+    'patch': 'partial_update',
+    'delete': 'destroy'
+})
 
 urlpatterns = [
     # HOME Page
@@ -23,5 +33,8 @@ urlpatterns = [
         views.activate, name='activate'),
     # RESET PASSWORD
     url(r'^', include('django.contrib.auth.urls')),
+    # API urls
+    url(r'^api/pcls/$', pcl_list, name='pcl_list'),
+    url(r'^api/pcl/(?P<pk>\d+)/$', pcl_list, name='pcl_list'),
 
 ]

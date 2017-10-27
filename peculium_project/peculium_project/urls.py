@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^', include('apps.accounts.urls'), name='accounts'),
     url(r'^payment/', include('apps.payment.urls'), name='payment'),
     # url(r'^statistics/', include('apps.statistic.urls'), name='statistic'),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
 
 if settings.DEBUG:

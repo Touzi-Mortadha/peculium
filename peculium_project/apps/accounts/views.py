@@ -22,7 +22,8 @@ from django.contrib.auth.decorators import user_passes_test
 from django.contrib.admin.views.decorators import staff_member_required
 from django.template.response import TemplateResponse
 from ..payment.models import ConfiTCL
-
+from rest_framework import viewsets
+from ..payment.serializers import ConfiTCLSerializer
 
 class IndexView(TemplateView):
     template_name = "home.html"
@@ -146,3 +147,12 @@ def activate(request, uidb64, token):
 
 def account_activation_sent(request):
     return render(request, 'activation_email/account_activation_sent.html')
+
+
+# API VIEWSETS
+
+class ConfiTCLViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = ConfiTCL.objects.all()
+    serializer_class = ConfiTCLSerializer
+
+
