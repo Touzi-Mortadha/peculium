@@ -3,7 +3,7 @@ from .models import ConfiTCL
 
 
 class ConfiTCLSerializer(serializers.ModelSerializer):
-    owner = serializers.ReadOnlyField(source='owner.username')
+    # owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
         model = ConfiTCL

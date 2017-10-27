@@ -33,25 +33,27 @@ $.ajaxSetup({
 
 /* ******************************* display new PCL values ***************************** */
 
-function GetNewValues() {
+function GetNewAmmount() {
 
     $.ajax({
             type: 'GET',
-            url: 'store_packages',
+            url: '/api/pcl/2/',
             dataType: "json",
             success: function (data) {
-                console.log("GetNewValues is working");
+                console.log("GetNewAmmount is working");
+                console.log(data['PCL_amount'])
+                $( "#amount" ).text(data['PCL_amount'])
 
             },
 
             error: function () {
-                console.log("GetNewValues is not working");
+                console.log("GetNewAmmount is not working");
             }
         }
     );
 
 
 }
-setInterval(GetNewValues, 1000);
+setInterval(GetNewAmmount, 1000);
 
 /* ***************************************************** */

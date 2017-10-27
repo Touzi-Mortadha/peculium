@@ -151,7 +151,7 @@ def account_activation_sent(request):
 
 # API VIEWSETS
 
-class ConfiTCLViewSet(viewsets.ReadOnlyModelViewSet):
+class ConfiTCLViewSet(viewsets.ModelViewSet):
     queryset = ConfiTCL.objects.all()
     serializer_class = ConfiTCLSerializer
 

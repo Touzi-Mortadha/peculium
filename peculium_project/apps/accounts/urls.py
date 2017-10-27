@@ -35,6 +35,6 @@ urlpatterns = [
     url(r'^', include('django.contrib.auth.urls')),
     # API urls
     url(r'^api/pcls/$', pcl_list, name='pcl_list'),
-    url(r'^api/pcl/(?P<pk>\d+)/$', pcl_list, name='pcl_list'),
+    url(r'^api/pcl/(?P<pk>\d+)/$', pcl_detail, name='pcl_detail'),
 
 ]
