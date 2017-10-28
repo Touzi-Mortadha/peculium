@@ -37,13 +37,13 @@ function GetNewAmmount() {
 
     $.ajax({
             type: 'GET',
-            url: '/api/pcl/2/',
+            url: '/api/pcl/1/',
             dataType: "json",
             success: function (data) {
                 console.log("GetNewAmmount is working");
                 console.log(data['PCL_amount'])
                 $( "#amount" ).text(data['PCL_amount'])
-
+                $( "#number_of_PCL" ).text(data['number_of_PCL'])
             },
 
             error: function () {
