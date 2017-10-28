@@ -3,8 +3,6 @@ from django.contrib.auth import views as auth_views
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-from .forms import SignUpForm
-from ..payment.forms import ConfigPCLForm
 from django.contrib.auth import login
 
 from django.contrib.auth.models import User
@@ -24,6 +22,10 @@ from django.template.response import TemplateResponse
 from ..payment.models import ConfiTCL
 from rest_framework import viewsets
 from ..payment.serializers import ConfiTCLSerializer
+from .serializers import UserProfileSerializer
+from .models import UserProfile
+from .forms import SignUpForm
+from ..payment.forms import ConfigPCLForm
 
 class IndexView(TemplateView):
     template_name = "home.html"
@@ -154,5 +156,15 @@ def account_activation_sent(request):
 class ConfiTCLViewSet(viewsets.ModelViewSet):
     queryset = ConfiTCL.objects.all()
     serializer_class = ConfiTCLSerializer
+
+
+class UserProfileViewSet(viewsets.ModelViewSet):
+    queryset = UserProfile.objects.all()
+    serializer_class = UserProfileSerializer
+
+
+
+
+
 
 
