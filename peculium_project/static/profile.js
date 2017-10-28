@@ -42,8 +42,8 @@ function GetNewAmmount() {
             success: function (data) {
                 console.log("GetNewAmmount is working");
                 console.log(data['PCL_amount'])
-                $( "#amount" ).text(data['PCL_amount'])
-                $( "#number_of_PCL" ).text(data['number_of_PCL'])
+                $("#amount").text(data['PCL_amount'])
+                $("#number_of_PCL").text(data['number_of_PCL'])
             },
 
             error: function () {
@@ -55,6 +55,46 @@ function GetNewAmmount() {
 
 }
 setInterval(GetNewAmmount, 1000);
+
+/* ***************************************************** */
+
+
+
+/* ******************************* GetHistory ***************************** */
+
+function GetHistory() {
+
+
+    $.ajax({
+            type: 'GET',
+            url: '/api/user/'.concat(current_user.toString(), '/'),
+            dataType: "json",
+            success: function (data) {
+
+                console.log("GetHistory is working");
+                console.log(data['transactions'])
+                var sorted_transactions =data['transactions']
+                sorted_transactions.forEach(function (element) {
+
+                    var date_of_trasaction=element.date_of_transaction;
+                    var time_of_transaction=element.time_of_transaction;
+                    var transaction_id=element.id;
+                    var amount_sent=element.amount_sent;
+                    var pcl_assignd=element.TCL_assigned;
+                    $("#history").prepend("<tr><td>".concat(date_of_trasaction,"</td><td>",time_of_transaction,"</td><td>",transaction_id,"</td><td>",amount_sent,"</td><td>",pcl_assignd,"</td></tr>"))
+                });
+
+            },
+
+            error: function () {
+                console.log("GetHistory is not working");
+            }
+        }
+    );
+
+
+}
+jQuery(document).ready(GetHistory);
 
 /* ***************************************************** */
 
