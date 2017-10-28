@@ -37,7 +37,7 @@ function GetNewAmmount() {
 
     $.ajax({
             type: 'GET',
-            url: '/api/pcl/1/',
+            url: '/api/pcl/2/',
             dataType: "json",
             success: function (data) {
                 console.log("GetNewAmmount is working");
@@ -72,7 +72,8 @@ function GetHistory() {
             success: function (data) {
 
                 console.log("GetHistory is working");
-                console.log(data['transactions'])
+                console.log(data['transactions']);
+
                 var sorted_transactions =data['transactions']
                 sorted_transactions.forEach(function (element) {
 
@@ -81,7 +82,8 @@ function GetHistory() {
                     var transaction_id=element.id;
                     var amount_sent=element.amount_sent;
                     var pcl_assignd=element.TCL_assigned;
-                    $("#history").prepend("<tr><td>".concat(date_of_trasaction,"</td><td>",time_of_transaction,"</td><td>",transaction_id,"</td><td>",amount_sent,"</td><td>",pcl_assignd,"</td></tr>"))
+                    var verified= element.verified;
+                    $("#history").prepend("<tr style='text-align: center;'><td style='padding: 20px;'>".concat(date_of_trasaction,"</td><td style='padding: 20px;'>",time_of_transaction,"</td><td style='padding: 20px;' >",transaction_id,"</td><td style='padding: 20px;'>",amount_sent,"</td><td style='padding: 20px;'>",pcl_assignd,"</td></tr>",verified,"</td></tr>"))
                 });
 
             },
@@ -96,6 +98,36 @@ function GetHistory() {
 }
 jQuery(document).ready(GetHistory);
 
+
+
 /* ***************************************************** */
+/* ****************** Cryptocompare *********************************** */
+
+
+
+function Cryptocompare() {
+
+    $.ajax({
+            type: 'GET',
+            url: 'https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=BTC%2CEUR',
+            dataType: "json",
+            success: function (data) {
+                console.log("Cryptocompare is working");
+                console.log(data)
+                $("#btc").text(data['BTC'])
+                $("#euro").text(data['EUR'])
+            },
+
+            error: function () {
+                console.log("Cryptocompare is not working");
+            }
+        }
+    );
+
+
+}
+setInterval(Cryptocompare, 1000);
+
+/* ********************************************** */
 
 

@@ -5,7 +5,7 @@ from .models import UserProfile, Transaction
 class TransactionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Transaction
-        fields = ('id', 'date_of_transaction','amount_sent','TCL_assigned','time_of_transaction')
+        fields = ('id', 'date_of_transaction','amount_sent','TCL_assigned','time_of_transaction','verified')
 
 
 class UserProfileSerializer(serializers.ModelSerializer):

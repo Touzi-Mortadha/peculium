@@ -1,115 +1,80 @@
-{#{% extends 'base.html' %}#}
-{##}
-{#{% block esp %}#}
-{#    <br><br><br>#}
-{##}
-{#{% endblock %}#}
-{##}
-{#{% block style %}#}
-{##}
-{#{% endblock %}#}
-{##}
-{#{% block title %}#}
-{#    Signup#}
-{#{% endblock %}#}
-{##}
-{#{% block content %}#}
-{#    <div class="container">#}
-{#        <div class="row">#}
-{##}
-{#            <h1 class="text-center"><span style="color: #CD5C5C;font-family: 'Sansita' ">Sign up</span></h1>#}
-{#            <br><br><br>#}
-{#        </div>#}
-{#        <div class="row">#}
-{#            <div class="col-sm-offset-1 col-sm-2">#}
-{#            </div>#}
-{#            <div class="col-sm-6">#}
-{##}
-{#                <form method="post">#}
-{#                    {% csrf_token %}#}
-{#                    {% for field in form %}#}
-{#                        <div class="fieldWrapper">#}
-{#                            <p>#}
-{#                                {{ field.label_tag }}<br>#}
-{#                                {{ field }}#}
-{#                                {% for error in field.errors %}#}
-{#                                    <p style="color: red">{{ error }}</p>#}
-{#                                {% endfor %}#}
-{#                            </p>#}
-{#                        </div>#}
-{#                    {% endfor %}#}
-{#                    <button type="submit" class="btn btn-lg btn-primary btn-block signup-btn"#}
-{#                            style='background-color:#CD5C5C'>Sign up#}
-{#                    </button>#}
-{#                </form>#}
-{##}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
-{##}
-{#    </div>#}
-{#    <br><br><br><br><br><br><br><br><br>#}
-{##}
-{##}
-{##}
-{#{% endblock %}#}
 {% load staticfiles %}
-<!DOCTYPE html>
 
-<html lang="en">
-
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
 <head>
-    <meta charset="utf-8"/>
-    <title>Peculium | Sign up </title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <meta content="" name="description"/>
-    <meta content="" name="author"/>
-    <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"
-          type="text/css"/>
-    <link href='{% static "assets/global/plugins/font-awesome/css/font-awesome.min.css" %}' rel="stylesheet"
-          type="text/css"/>
-    <link href='{% static "assets/global/plugins/simple-line-icons/simple-line-icons.min.css" %}' rel="stylesheet"
-          type="text/css"/>
-    <link href='{% static "assets/global/plugins/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet" type="text/css"/>
-    <link href='{% static "assets/global/plugins/uniform/css/uniform.default.css" %}' rel="stylesheet" type="text/css"/>
-    <!-- END GLOBAL MANDATORY STYLES -->
-    <!-- BEGIN PAGE LEVEL STYLES -->
-    <link href='{% static "assets/admin/pages/css/login.css" %}' rel="stylesheet" type="text/css"/>
-    <!-- END PAGE LEVEL SCRIPTS -->
-    <!-- BEGIN THEME STYLES -->
-    <link href='{% static "assets/global/css/components.css" %}' id="style_components" rel="stylesheet"
-          type="text/css"/>
-    <link href='{% static "assets/global/css/plugins.css" %}' rel="stylesheet" type="text/css"/>
-    <link href='{% static "assets/admin/layout/css/layout.css" %}' rel="stylesheet" type="text/css"/>
-    <link href='{% static "assets/admin/layout/css/themes/darkblue.css" %}' rel="stylesheet" type="text/css"
-          id="style_color"/>
-    <link href='{% static "assets/admin/layout/css/custom.css" %}' rel="stylesheet" type="text/css"/>
-    <!-- END THEME STYLES -->
-    <link rel="shortcut icon" href="favicon.ico"/>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- Important stuff for SEO, don't neglect. (And don't dupicate values across your site!) -->
+    <title>Peculium | Create Acount</title>
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+
+    <!-- Don't forget to set your site up: http://google.com/webmasters -->
+    <meta name="google-site-verification" content="" />
+    <meta name="Copyright" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Use Iconifyer to generate all the favicons and touch icons you need: http://iconifier.net -->
+    <link rel="shortcut icon" href='{% static "images/favicon/favicon.ico"  %}' type="image/x-icon" />
+    <link rel="apple-touch-icon" href='{% static "images/favicon/apple-touch-icon.png" %}' />
+    <link rel="apple-touch-icon" sizes="57x57" href='{% static "images/favicon/apple-touch-icon-57x57.png" %}' />
+    <link rel="apple-touch-icon" sizes="72x72" href='{% static "images/favicon/apple-touch-icon-72x72.png" %}' />
+    <link rel="apple-touch-icon" sizes="76x76" href='{% static "images/favicon/apple-touch-icon-76x76.png" %}' />
+    <link rel="apple-touch-icon" sizes="114x114" href='{% static "images/favicon/apple-touch-icon-114x114.png" %}' />
+    <link rel="apple-touch-icon" sizes="120x120" href='{% static "images/favicon/apple-touch-icon-120x120.png" %}' />
+    <link rel="apple-touch-icon" sizes="144x144" href='{% static "images/favicon/apple-touch-icon-144x144.png" %}' />
+    <link rel="apple-touch-icon" sizes="152x152" href='{% static "images/favicon/apple-touch-icon-152x152.png "%}' />
+
+    <!-- concatenate and minify for production -->
+    <link rel="stylesheet" href='{% static "css/style.css" %}' type="text/css" media="all" />
+    <link rel="stylesheet" href='{% static "css/magnific-popup.css"  %}' type="text/css" media="all" />
+    <link rel="stylesheet" href='{% static "css/bootstrap.css" %}' type="text/css" media="all" />
+    <link rel="stylesheet" href='{% static "css/animate.min.css"  %}' type="text/css" media="all" />
+
+    <link rel="stylesheet" href='{% static "css/magnific-popup.css"  %}' type="text/css" media="all" />
+    <link rel="stylesheet" href='{% static "css/icon-fonts.css" %}' type="text/css" media="all" />
+
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <style>.theme_option {display: none !important;}</style>
 </head>
-<!-- END HEAD -->
-<!-- BEGIN BODY -->
-<body class="login">
-<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-<div class="menu-toggler sidebar-toggler">
+
+<!-- Class ( site_boxed - dark - preloader1 - preloader2 - preloader3 - light_header - dark_sup_menu - menu_button_mode - transparent_header - header_on_side ) -->
+<body class="preloader3 light_header">
+<div id="preloader">
+    <div class="spinner">
+        <div class="sk-dot1"></div><div class="sk-dot2"></div>
+        <div class="rect3"></div><div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
 </div>
-<!-- END SIDEBAR TOGGLER BUTTON -->
-<!-- BEGIN LOGO -->
-<div class="logo">
-    <a href="#" style="font-size: 40px">
-        PECULIUM
-    </a>
-</div>
-<!-- END LOGO -->
-<!-- BEGIN LOGIN -->
-<div class="content">
-    <!-- BEGIN REGISTRATION FORM -->
-    <form class="register-form" method="post">{% csrf_token %}
-        <h3>Sign Up</h3>
-        <p class="hint">
+
+<div id="main_wrapper">
+
+    <!-- Section -->
+    <section class="content_section bg5">
+        <div class="content row_spacer centered clearfix">
+            <div class="main_title side_line centered upper">
+                <h2><span class="line"></span>Get started with Create Account</h2>
+            </div>
+
+            <div class="my_col_half on_the_center centered clearfix">
+                <form class="login_form_colored shadow1 owl-goDown-in flip_top" method="post" action="">
+                    {% csrf_token %}
+                    <input type="hidden" name="_token" value="KZLTjrJvM0LoKR22odbhbeFfwXd1VH74hGansMCB">
+                    <div class="lfc_user_row">
+                        <span class="lfc_header">Sign Up Or <a href="{% url 'login' %}">Login</a></span>
+                    </div>
+
+                    <p class="hint">
             Enter your personal details below:
         </p>
         {% if form.errors %}
@@ -126,93 +91,90 @@
                 </div>
             {% endfor %}
         {% endif %}
-        <div class="form-group">
-            <label class="control-label visible-ie8 visible-ie9">First Name</label>
-            <input class="form-control placeholder-no-fix" type="text" placeholder="First Name" name="first_name"/>
-        </div>
-        <div class="form-group">
-            <label class="control-label visible-ie8 visible-ie9">Last Name</label>
-            <input class="form-control placeholder-no-fix" type="text" placeholder="Last Name" name="last_name"/>
-        </div>
-        <div class="form-group">
-            <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
-            <label class="control-label visible-ie8 visible-ie9">Email</label>
-            <input class="form-control placeholder-no-fix" type="text" placeholder="Email" name="email"/>
-        </div>
-        {#        <div class="form-group">#}
-        {#            <label class="control-label visible-ie8 visible-ie9">Address</label>#}
-        {#            <input class="form-control placeholder-no-fix" type="text" placeholder="Address" name="addresse"/>#}
-        {#        </div>#}
-        <div class="form-group">
-            <label class="control-label visible-ie8 visible-ie9">Username</label>
-            <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Username"
-                   name="username"/>
-        </div>
-        <div class="form-group">
-            <label class="control-label visible-ie8 visible-ie9">Password</label>
-            <input class="form-control placeholder-no-fix" type="password" autocomplete="off" id="register_password"
-                   placeholder="Password" name="password1"/>
-        </div>
-        <div class="form-group">
-            <label class="control-label visible-ie8 visible-ie9">Re-type Your Password</label>
-            <input class="form-control placeholder-no-fix" type="password" autocomplete="off"
-                   placeholder="Re-type Your Password" name="password2"/>
-        </div>
-        <div class="form-group margin-top-20 margin-bottom-20">
-            <label class="check">
-                <input type="checkbox" name="tnc"/> I agree to the <a href="javascript:;">
-                Terms of Service </a>
-                & <a href="javascript:;">
-                Privacy Policy </a>
-            </label>
-            <div id="register_tnc_error">
+
+                    <div class="lfc_user_row">
+                        <label for="login_user_name">
+							<span class="label_space">
+								<span class="hm_field_name">Username</span>
+								<span class="hm_requires_star">*</span>
+							</span>
+                            <input class="input_no_icon" type="text" name="username" id="register_name">
+                        </label>
+                    </div>
+
+
+                <div class="lfc_user_row">
+                        <label for="login_user_name">
+							<span class="label_space">
+								<span class="hm_field_name">First Name</span>
+								<span class="hm_requires_star">*</span>
+							</span>
+                            <input class="input_no_icon" type="text" name="first_name" >
+                        </label>
+                    </div>
+
+
+
+                <div class="lfc_user_row">
+                        <label for="login_user_name">
+							<span class="label_space">
+								<span class="hm_field_name">Last Name</span>
+								<span class="hm_requires_star">*</span>
+							</span>
+                            <input class="input_no_icon" type="text" name="last_name" >
+                        </label>
+                    </div>
+
+
+                    <div class="lfc_user_row">
+                        <label for="login_user_name">
+							<span class="label_space">
+								<span class="hm_field_name">Email Address</span>
+								<span class="hm_requires_star">*</span>
+							</span>
+                            <input class="input_no_icon" type="email" name="email" id="register_email">
+                        </label>
+                    </div>
+                    <div class="lfc_user_row">
+                        <label for="login_password">
+							<span class="label_space">
+								<span class="hm_field_name">Password</span>
+								<span class="hm_requires_star">*</span>
+							</span>
+                            <input class="input_no_icon" type="password" name="password1" id="register_password">
+                        </label>
+                    </div>
+                    <div class="lfc_user_row">
+                        <label for="login_password">
+							<span class="label_space">
+								<span class="hm_field_name">Confirm Password</span>
+								<span class="hm_requires_star">*</span>
+							</span>
+                            <input class="input_no_icon" type="password" name="password2" id="register_password_re">
+                        </label>
+                    </div>
+                    <div class="lfc_user_row clearfix">
+                        <div class="clearfix">
+                            <button type="submit" name="login" class="send_button f_right margin_left_a">
+                                Create My Account
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-        <div class="form-actions">
-            <a href="{% url 'login' %}">
-                <button type="button" id="register-back-btn" class="btn btn-default">Back</button>
-            </a>
-            <button type="submit" id="register-submit-btn" class="btn btn-success uppercase pull-right">Submit</button>
-        </div>
-    </form>
-    <!-- END REGISTRATION FORM -->
+    </section>
+    <!-- End Section -->
+
 </div>
-<div class="copyright">
-    2017 © Peculium.
-</div>
-<!-- END LOGIN -->
-<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
-<!-- BEGIN CORE PLUGINS -->
-<!--[if lt IE 9]-->
-{#<script src='{% static "assets/global/plugins/respond.min.js" %}'></script>#}
-{#<script src='{% static "assets/global/plugins/excanvas.min.js" %}'></script>#}
-<!--[endif]-->
-{#<script src='{% static "assets/global/plugins/jquery.min.js" %}' type="text/javascript"></script>#}
-{#<script src='{% static "assets/global/plugins/jquery-migrate.min.js" %}' type="text/javascript"></script>#}
-{#<script src='{% static "assets/global/plugins/bootstrap/js/bootstrap.min.js" %}' type="text/javascript"></script>#}
-{#<script src='{% static "assets/global/plugins/jquery.blockui.min.js" %}' type="text/javascript"></script>#}
-{#<script src='{% static "assets/global/plugins/jquery.cokie.min.js" %}' type="text/javascript"></script>#}
-{#<script src='{% static "assets/global/plugins/uniform/jquery.uniform.min.js" %}' type="text/javascript"></script>#}
-<!-- END CORE PLUGINS -->
-<!-- BEGIN PAGE LEVEL PLUGINS -->
-<script src='{% static "assets/global/plugins/jquery-validation/js/jquery.validate.min.js" %}'
-        type="text/javascript"></script>
-<!-- END PAGE LEVEL PLUGINS -->
-<!-- BEGIN PAGE LEVEL SCRIPTS -->
-{#<script src='{% static "assets/global/scripts/metronic.js" %}' type="text/javascript"></script>#}
-{#<script src='{% static "assets/admin/layout/scripts/layout.js" %}' type="text/javascript"></script>#}
-{#<script src='{% static "assets/admin/layout/scripts/demo.js" %}' type="text/javascript"></script>#}
-{#<script src='{% static "assets/admin/pages/scripts/login.js" %}' type="text/javascript"></script>#}
-<!-- END PAGE LEVEL SCRIPTS -->
-{#<script>#}
-{#    jQuery(document).ready(function() {#}
-{#        Metronic.init(); // init metronic core components#}
-{#        Layout.init(); // init current layout#}
-{#        Login.init();#}
-{#        Demo.init();#}
-{#    });#}
-{#</script>#}
-<!-- END JAVASCRIPTS -->
+<!-- End wrapper -->
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>')</script>
+<script src='{% static "js/plugins.js" %}'></script>
+<script src='{% static "js/isotope.pkgd.min.js" %}'></script>
+<script type="text/javascript" src='{% static "js/progressbar.min.js" %}'></script>
+<!-- this is where we put our custom functions -->
+<script type="text/javascript" src='{% static "js/functions.js" %}'></script>
 </body>
-<!-- END BODY -->
 </html>

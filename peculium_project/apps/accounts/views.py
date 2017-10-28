@@ -25,7 +25,7 @@ from ..payment.serializers import ConfiTCLSerializer
 from .serializers import UserProfileSerializer
 from .models import UserProfile
 from .forms import SignUpForm
-from ..payment.forms import ConfigPCLForm
+from ..payment.forms import ConfigPCLForm, ConfigUsedTCLForm
 
 class IndexView(TemplateView):
     template_name = "home.html"
@@ -78,6 +78,9 @@ class signup(View):
         return render(request, self.template_name, {'form': form})
 
 
+
+
+
 class UpdateUserView(TemplateView):
     template_name = "profile.html"
 
@@ -86,16 +89,39 @@ class UpdateUserView(TemplateView):
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
 
+    def post(self, request, *args, **kwargs):
+        userr = User.objects.get(username='peculium')
+        inst = ConfiTCL.objects.get(user=userr)
+        tmp = inst.TCL_USED
+        form = ConfigUsedTCLForm(request.POST, instance=inst)
+        if form.is_valid():
+            obj=form.save(commit=False)
+            obj.TCL_USED=tmp+form.cleaned_data['TCL_USED']
+            obj.save()
+            context = {'amount': inst.PCL_amount,
+                       'number_of_tokens': inst.number_of_PCL,
+                       'user': self.request.user,
+                       'form': form}
+            return redirect('profile')
+        return render(request, self.template_name)
+
     def get(self, request, *args, **kwargs):
         userr = User.objects.get(username='peculium')
         inst = ConfiTCL.objects.get(user=userr)
-        context = {'amount': inst.PCL_amount, 'number_of_tokens': inst.number_of_PCL, 'user': self.request.user}
+        form = ConfigUsedTCLForm(instance=inst)
+        context = {'amount': inst.PCL_amount,
+                   'number_of_tokens': inst.number_of_PCL,
+                   'user': self.request.user,
+                   'form': form}
         return TemplateResponse(request, self.template_name, context)
 
         # def get_context_data(self, **kwargs):
         #     context = super(UpdateUserView, self).get_context_data(**kwargs)
         #     context['user'] = self.request.user
         #     return context
+
+
+
 
 
 class UpdateAdminView(TemplateView):
