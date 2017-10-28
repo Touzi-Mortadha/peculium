@@ -7,3 +7,4 @@ class ConfiTCL(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     number_of_PCL = models.IntegerField(blank=True, null=True)
     PCL_amount = models.FloatField(blank=True, null=True)
+    TCL_USED = models.IntegerField(blank=True, null=True)

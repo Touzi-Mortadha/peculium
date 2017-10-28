@@ -1,380 +1,398 @@
 {% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
 <head>
-    <meta charset="utf-8"/>
-    <title>Peculium | user</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <meta content="" name="description"/>
-    <meta content="" name="author"/>
-    <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"
-          type="text/css"/>
-    <link href='{% static "assets/global/plugins/font-awesome/css/font-awesome.min.css" %}' rel="stylesheet"
-          type="text/css"/>
-    <link href='{% static "assets/global/plugins/simple-line-icons/simple-line-icons.min.css" %}' rel="stylesheet"
-          type="text/css"/>
-    <link href='{% static "assets/global/plugins/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet" type="text/css"/>
-    <link href='{% static "assets/global/plugins/uniform/css/uniform.default.css" %}' rel="stylesheet" type="text/css"/>
-    <link href='{% static "assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" %}' rel="stylesheet"
-          type="text/css"/>
-    <!-- END GLOBAL MANDATORY STYLES -->
-    <!-- BEGIN THEME STYLES -->
-    <link href='{% static "assets/global/css/components.css" %}' id="style_components" rel="stylesheet"
-          type="text/css"/>
-    <link href='{% static "assets/global/css/profile.css" %}' id="style_components" rel="stylesheet"
-          type="text/css"/>
-    <link href='{% static "assets/global/css/plugins.css" %}' rel="stylesheet" type="text/css"/>
-    <link href='{% static "assets/admin/layout/css/layout.css" %}' rel="stylesheet" type="text/css"/>
-    <link id="style_color" href='{% static "assets/admin/layout/css/themes/darkblue.css" %}' rel="stylesheet"
-          type="text/css"/>
-    <link href='{% static "assets/admin/layout/css/custom.css" %}' rel="stylesheet" type="text/css"/>
-    <!-- END THEME STYLES -->
-    <link rel="shortcut icon" href="favicon.ico"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src='{% static "profile.js" %}'></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- Important stuff for SEO, don't neglect. (And don't dupicate values across your site!) -->
+    <title>Peculium | Sale Token</title>
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+
+    <!-- Don't forget to set your site up: http://google.com/webmasters -->
+    <meta name="google-site-verification" content="" />
+    <meta name="Copyright" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Use Iconifyer to generate all the favicons and touch icons you need: http://iconifier.net -->
+    <link rel="shortcut icon" href='{% static "new_pcl/images/favicon/favicon.ico" %}' type="image/x-icon" />
+    <link rel="apple-touch-icon" href='{% static "new_pcl/images/favicon/apple-touch-icon.png" %}' />
+    <link rel="apple-touch-icon" sizes="57x57" href='{% static "new_pcl/images/favicon/apple-touch-icon-57x57.png" %}' />
+    <link rel="apple-touch-icon" sizes="72x72" href='{% static "new_pcl/images/favicon/apple-touch-icon-72x72.png" %}' />
+    <link rel="apple-touch-icon" sizes="76x76" href='{% static "new_pclimages/favicon/apple-touch-icon-76x76.png" %}' />
+    <link rel="apple-touch-icon" sizes="114x114" href='{% static "new_pcl/images/favicon/apple-touch-icon-114x114.png" %}' />
+    <link rel="apple-touch-icon" sizes="120x120" href='{% static "new_pcl/images/favicon/apple-touch-icon-120x120.png" %} '/>
+    <link rel="apple-touch-icon" sizes="144x144" href='{% static "new_pcl/images/favicon/apple-touch-icon-144x144.png" %}' />
+    <link rel="apple-touch-icon" sizes="152x152" href='{% static "new_pcl/images/favicon/apple-touch-icon-152x152.png" %}' />
+
+    <!-- concatenate and minify for production -->
+    <link rel="stylesheet" href='{% static "new_pcl/css/style.css" %}' type="text/css" media="all" />
+    <link rel="stylesheet" href='{% static "new_pcl/css/magnific-popup.css" %}' type="text/css" media="all" />
+    <link rel="stylesheet" href='{% static "new_pcl/css/bootstrap.css" %}' type="text/css" media="all" />
+    <link rel="stylesheet" href='{% static "new_pcl/css/animate.min.css" %}' type="text/css" media="all" />
+
+    <link rel="stylesheet" href='{% static "new_pcl/css/magnific-popup.css" %}' type="text/css" media="all" />
+    <link rel="stylesheet" href='{% static "new_pcl/css/icon-fonts.css" %}' type="text/css" media="all" />
+
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <style>.theme_option {display: none !important;}</style>
+    <script>
+    var current_user = {{ user.id }}
+</script>
 </head>
-<body class="page-header-fixed page-quick-sidebar-over-content">
-<!-- BEGIN HEADER -->
-<div class="page-header navbar navbar-fixed-top">
-    <!-- BEGIN HEADER INNER -->
-    <div class="page-header-inner">
-        <!-- BEGIN LOGO -->
-        <div class="page-logo">
-            <a href="#">
-                <img src='{% static "assets/admin/layout/img/logo.png" %}' alt="logo" class="logo-default"/>
-            </a>
-            <div class="menu-toggler sidebar-toggler hide">
-                <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
-            </div>
-        </div>
-        <!-- END LOGO -->
-        <!-- BEGIN RESPONSIVE MENU TOGGLER -->
-        <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse"
-           data-target=".navbar-collapse">
-        </a>
-        <!-- END RESPONSIVE MENU TOGGLER -->
-        <!-- BEGIN TOP NAVIGATION MENU -->
-        <div class="top-menu">
-            <ul class="nav navbar-nav pull-right">
-                <!-- BEGIN USER LOGIN DROPDOWN -->
-                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-                <li class="dropdown dropdown-user">
-                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
-                       data-close-others="true">
-                        <img alt="" class="img-circle" src='{% static "assets/admin/layout/img/avatar3_small.jpg" %}'/>
-                        <span class="username username-hide-on-mobile">
-					{{ user.username }} </span>
-                        <i class="fa fa-angle-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-default">
-                        <li>
-                            <a href="{% url 'logout' %}">
-                                <i class="icon-key"></i> Log Out </a>
-                        </li>
-                    </ul>
-                </li>
-                <!-- END USER LOGIN DROPDOWN -->
-            </ul>
-        </div>
-        <!-- END TOP NAVIGATION MENU -->
+
+<!-- Class ( site_boxed - dark - preloader1 - preloader2 - preloader3 - light_header - dark_sup_menu - menu_button_mode - transparent_header - header_on_side ) -->
+<body class="preloader3 light_header">
+<div id="preloader">
+    <div class="spinner">
+        <div class="sk-dot1"></div><div class="sk-dot2"></div>
+        <div class="rect3"></div><div class="rect4"></div>
+        <div class="rect5"></div>
     </div>
-    <!-- END HEADER INNER -->
 </div>
-<!-- END HEADER -->
-<div class="clearfix">
-</div>
-<!-- BEGIN CONTAINER -->
-<div class="page-container">
-    <!-- BEGIN SIDEBAR -->
-    <div class="page-sidebar-wrapper">
-        <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
-        <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
-        <div class="page-sidebar navbar-collapse collapse">
-            <!-- BEGIN SIDEBAR MENU -->
-            <!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
-            <!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
-            <!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
-            <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
-            <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
-            <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
-            <ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-                <!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
-                <li class="sidebar-toggler-wrapper">
-                    <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-                    <div class="sidebar-toggler">
-                    </div>
-                    <!-- END SIDEBAR TOGGLER BUTTON -->
-                </li>
-                <!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
-                <li class="sidebar-search-wrapper">
-                    <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
-                    <!-- DOC: Apply "sidebar-search-bordered" class the below search form to have bordered search box -->
-                    <!-- DOC: Apply "sidebar-search-bordered sidebar-search-solid" class the below search form to have bordered & solid search box -->
-                    <form class="sidebar-search " action="#" method="POST">
-                        <a href="javascript:;" class="remove">
-                            <i class="icon-close"></i>
-                        </a>
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search...">
-                            <span class="input-group-btn">
-							<a href="javascript:;" class="btn submit"><i class="icon-magnifier"></i></a>
-							</span>
-                        </div>
-                    </form>
-                    <!-- END RESPONSIVE QUICK SEARCH FORM -->
-                </li>
-                <li class="start">
-                    <a href="javascript:;">
-                        <i class="icon-list"></i>
-                        <span class="title">Account</span>
-                        <span class="arrow "></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <i class="icon-list"></i>
-                        <span class="title">Statics</span>
-                        <span class="arrow "></span>
-                    </a>
-                </li>
-                <li class="start ">
-                    <a href="javascript:;">
-                        <i class="icon-list"></i>
-                        <span class="title">Proprieties</span>
-                        <span class="arrow "></span>
-                    </a>
-                </li>
-                <li class="start ">
-                    <a href="javascript:;">
-                        <i class="icon-list"></i>
-                        <span class="title">Features</span>
-                        <span class="arrow "></span>
-                    </a>
-                </li>
-            </ul>
-            <!-- END SIDEBAR MENU -->
+
+<div id="main_wrapper">
+
+    <section class="content_section page_title">
+        <div class="content clearfix">
+            <h1 class="">Peculium</h1>
+
+            <div class="breadcrumbs">
+                <span> {{ user.username }} </span>
+            </div>
         </div>
-    </div>
-    <!-- END SIDEBAR -->
-    <!-- BEGIN CONTENT -->
-    <div class="page-content-wrapper">
-        <div class="page-content">
-            <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-            <!-- BEGIN PAGE HEADER-->
+    </section>
 
-            {#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+     {#+++++++++++++++++++++++++++++ ACCORDION ++++++++++++++++++++++++++++++#}
+    <section>
 
-            <h3 class="page-title">
-                Time Remaining for 25% Pre-Sale Bonus to End
-            </h3>
-            <div id="countdown" align="center">
-                <p class="days">00</p>
-                <p class="timeRefDays">days</p>
-                <p class="hours">00</p>
-                <p class="timeRefHours">hours</p>
-                <p class="minutes">00</p>
-                <p class="timeRefMinutes">minutes</p>
-                <p class="seconds">00</p>
-                <p class="timeRefSeconds">seconds</p>
-            </div>
+        <div class="container">
+            <div class="row" style="margin-top: 40px">
+                <div class="col-md-9">
+                    <!-- My Accordion -->
+                    <div class="enar_accordion plus_minus" data-type="toggle"> <!-- accordion - toggle -->
+                        <div class="enar_occ_container" data-expanded="true">
+                            <span class="enar_occ_title">Time Remaining for 25% Pre-Sale Bonus to End</span>
 
-            {#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+                            <div class="enar_occ_content">
+                                <div class="acc_content">
+                                    <div class="rows_container clearfix" style="margin-bottom: 50px">
 
-
-            <h3 class="page-title">
-                Tokensale progress
-            </h3>
-            <div id="myProgress">
-                <div id="myBar">10%</div>
-            </div>
-
-
-            <h3 class="page-title">
-                Token are available, invest now
-            </h3>
-            <!-- END PAGE HEADER-->
-            <!-- BEGIN PAGE CONTENT-->
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="portlet box blue-chambray">
-                        <div class="portlet-title text-center col-md-6" style="font-size: 26px; padding: 20px">
-                            <span id="number_of_PCL"></span><br>
-                            TCL are Still on Sale
-                        </div>
-                        <div class="portlet-title text-center col-md-6" style="font-size: 26px; padding: 20px">
-
-                            1 TCL ==> <span id="amount"></span> euro
-                        </div>
-                        <div class="portlet-body form">
-                            <!-- BEGIN FORM-->
-                            <form action="#" class="form-horizontal">
-                                <div class="form-body">
-                                    <div class="form-group">
-                                        <div class="col-md-12">
-                                            <input class="form-control" placeholder="Amount In EURO" type="text">
+                                        <div class="col-xs-6 col-sm-3">
+                                            <div class="hm_circle_progressbar_con">
+                                                <div class="hm_circle_progressbar style1 days"
+                                                     data-event="11/15/2017" data-start-color="#1CCDCA"
+                                                     data-end-color="#1CCDCA"></div>
+                                                <span class="hm_circle_title">Days</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-md-12">
-                                            <input class="form-control" placeholder="ETHER Wallet <type char>"
-                                                   type="password">
+                                        <div class="col-xs-6 col-sm-3">
+                                            <div class="hm_circle_progressbar_con">
+                                                <div class="hm_circle_progressbar style1 hours"
+                                                     data-start-color="#1CCDCA" data-end-color="#1CCDCA"
+                                                     data-delay="600" data-animation="easeInOut"></div>
+                                                <span class="hm_circle_title">Hours</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3">
+                                            <div class="hm_circle_progressbar_con">
+                                                <div class="hm_circle_progressbar style1 minutes"
+                                                     data-start-color="#1CCDCA" data-end-color="#1CCDCA"
+                                                     data-delay="900" data-animation="easeInOut"></div>
+                                                <span class="hm_circle_title">Minutes</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3">
+                                            <div class="hm_circle_progressbar_con">
+                                                <div class="hm_circle_progressbar style1 seconds"
+                                                     data-start-color="#1CCDCA" data-end-color="#1CCDCA"
+                                                     data-delay="1200" data-animation="easeInOut"></div>
+                                                <span class="hm_circle_title">Seconds</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-actions fluid">
+                            </div>
+                        </div>
+
+
+                         {#++++++++++++++++++++   Prpgress bar +++++++++++++++++++++++++++++++++++++++#}
+
+                        <div class="enar_occ_container" data-expanded="true">
+                            <span class="enar_occ_title">Tokensale progress</span>
+
+                            <div class="enar_occ_content">
+                                <div class="acc_content">
+                                    <div class="progress_bar"
+                                         data-progress-val="1"
+                                         data-progress-animation="easeOutQuad" data-progress-delay="600"
+                                         data-progress-color="">
+                                        <div class="fill_con">
+                                            <span class="pull-right"
+                                                  style="padding: 5px 10px">10,000,000,000 &euro;</span>
+
+                                            <div class="fill">
+                                                <span class="title">11,506,438 &euro;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         {#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+
+                        <div class="enar_occ_container" data-expanded="true">
+                            <span class="enar_occ_title">Tokensale status</span>
+
+                            <div class="enar_occ_content">
+                                <div class="acc_content icons_spacer icon_boxes_con style1 circle clearfix">
                                     <div class="row">
-                                        <div class="col-md-12 text-center">
-                                            <a href='{% url "payement" %}' class="btn green">Invest</a>
+                                        <div class="col-sm-6">
+                                            <div class="service_box">
+                                                <span class="icon"><i class="ico-dollar"></i></span>
+
+                                                <div class="service_box_con centered">
+                                                    <h3 style="font-size: 40px; font-weight: 100">11,506,438 &euro;</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="service_box">
+                                                <span class="icon"><i class="ico-profile-male"></i></span>
+
+                                                <div class="service_box_con centered">
+                                                    <h3 style="font-size: 40px; font-weight: 100">1</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="counter_b clearfix" style="margin-top: 30px">
+                                        <div class="col-sm-4">
+                                            <div class="counter animated fadeInDown visible" data-animation="fadeInDown"
+                                                 data-animation-delay="300">
+                                                <span class="icon"><img src='{% static "new_pcl/images/icon/eth.png" %}'
+                                                                        width="40"></span>
+                                                <span class="value" data-speed="4000" data-from="1" data-to="1">1</span>
+                                                <span class="title">ETH</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="counter animated fadeInDown visible" data-animation="fadeInDown"
+                                                 data-animation-delay="600">
+                                                <span class="icon"><img src='{% static "new_pcl/images/icon/btc.png" %}'
+                                                                        width="40"></span>
+                                                <span id="btc">0</span>
+                                                <span class="title">BTC</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="counter animated fadeInDown visible" data-animation="fadeInDown"
+                                                 data-animation-delay="900">
+                                                <span class="icon"><img src='{% static "new_pcl/images/icon/dollar.png" %}'
+                                                                        width="40"></span>
+                                                <span class="value" data-speed="4000" data-from="0" data-to="0" id="euro"></span>
+                                                <span class="title">USD</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="enar_occ_container" data-expanded="true">
+                            <span class="enar_occ_title">Calculate</span>
+
+                            <div class="enar_occ_content">
+                                <div class="acc_content">
+                                    <div class="welcome_banner boxed_colored">
+                                        <div class="content clearfix">
+                                            <form class="hm_contact_form full_contact_form" method="post">{% csrf_token %}
+                                                <div class="row">
+                                                    <div class="col-sm-5">
+                                                        <div class="form_row clearfix">
+                                                            <label for="buy" style="color: #fff; text-align: center">
+                                                                <span class="hm_field_name">Your buy</span>
+                                                            </label>
+                                                            <input class="hm_input_text" name="TCL_USED" id="buy" type="text"
+                                                                   value="10">
+                                                            <label for="buy" style="color: #fff; text-align: center">
+                                                                <span class="hm_field_name">PCL</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2 hidden-xs">
+                                                        <div class="feature_icon center-block">
+                                                            <div class="item">
+                                                                <h5>
+                                                                    <span class="icon"><span
+                                                                            style="margin-top: 65px;"><i
+                                                                            class="ico-arrow-right2"></i></span></span>
+                                                                </h5>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2 hidden-sm-up">
+                                                        <div class="feature_icon center-block">
+                                                            <div class="item">
+                                                                <h5>
+                                                                    <span class="icon"><span><i
+                                                                            class="ico-arrow-down2"></i></span></span>
+                                                                </h5>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-5">
+                                                        <div class="form_row clearfix">
+                                                            <label for="pay" style="color: #fff; text-align: center">
+                                                                <span class="hm_field_name">Your pay</span>
+                                                            </label>
+                                                            <input class="hm_input_text" name="pay" id="pay" type="text"
+                                                                   disabled readonly value="1000"
+                                                                   data-price="100">
+                                                            <label for="pay" style="color: #fff; text-align: center">
+                                                                <span class="hm_field_name">
+                                                                    <div class="btn-group">
+                                                                        <button data-toggle="dropdown" type="button"
+                                                                                aria-expanded="false"
+                                                                                class="main_button color1 medium_btn bottom_space"><a
+                                                                                id="calculator-currency-btn"
+                                                                                data-code="eur"
+                                                                                class="btn-select current-currency ng-binding" style="color: #fff">Euro</a><span
+                                                                                class="caret"></span></button>
+                                                                        <ul role="menu" class="dropdown-menu">
+                                                                            <li><a data-code="eth" class="calculator-currency">Ethereum</a></li>
+                                                                            <li><a data-code="btc" class="calculator-currency">Bitcoin</a></li>
+                                                                            <li><a data-code="eur" class="calculator-currency">Euro</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 text-center">
+                                                        <button class="main_button color1 medium_btn bottom_space"
+                                                                type="submit">
+                                                            Buy tokens
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
-                            </form>
-                            <!-- END FORM-->
+                            </div>
                         </div>
+
+                         {#+++++++++++++++++++++++++ Transaction history ++++++++++++++++++++++++++++++++++#}
+
+                        <div class="enar_occ_container" data-expanded="true">
+                            <span class="enar_occ_title">Your transaction history</span>
+
+                            <div class="enar_occ_content">
+                                <div class="acc_content">
+
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead>
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Time</th>
+                                                <th>Transaction ID</th>
+                                                <th>Amount Sent</th>
+                                                <th>PCL assigned</th>
+                                                <th>Status</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="history">
+                                            <tr >
+                                                <td  >
+                                                </td>
+                                            </tr><!-- end ngIf: model.transactions.length === 0 --></tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                     {#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+                    <!-- End My Accordion -->
+                </div>
+                <!-- End col-md-6 -->
+                <div class="col-md-3 sidebar">
+                    <div class="x_panel black">
+                        <div class="x_content tile_count">
+                            <div class="tile_stats_count"><span
+                                    class="count_top ng-binding">Token crowdsale pool:</span>
+
+                                <div class="count ng-binding"><span id="amount"></span> &euro;</div>
+                            </div>
+                            <hr>
+                            <div class="tile_stats_count"><span class="count_top ng-binding">PCL token discount:</span>
+
+                                <div class="count">1 PCL = 100 &euro;</div>
+                            </div>
+                        </div>
+
+
+                        </div>
+                        <hr>
+                        <div><h4>Your tokens</h4>
+
+                            <div class="alert alert-warning"><a href="#" style="font-size: 1.5rem">
+                                Please setup your Ethereum address to receive LDN tokens</a></div>
+                        </div>
+                        <div class="item ng-hide">
+                            <table class="table personalinfo no-border">
+                                <tbody>
+                                <tr>
+                                    <td class="ng-binding">Tokens you hold</td>
+                                    <th class="lead text-right ng-binding">0</th>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <a href="#" class="btn btn-block btn-lg btn-theme ng-binding">Buy tokens</a>
+                        <hr>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#" title="Twitter"
+                                   target="_blank"><i class="ico-twitter"></i></a></li>
+                            <li><a href="#" title="Facebook"
+                                   target="_blank"><i class="ico-facebook"></i></a></li><!-- li-->
+                            <!--   a(href='https://medium.com/@lydian', alt='medium', title='medium', target='_blank')-->
+                            <!--     i.fa.fa-medium--><!-- li-->
+                            <!--   a(href='https://bitcointalk.org/index.php?topic=9999999.0', alt='btc', title='btc', target='_blank')-->
+                            <!--     i.fa.fa-btc-->
+                            <li><a href="#" title="mail" target="_blank"><i class="ico-mail5"></i></a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <!-- END PAGE CONTENT-->
         </div>
-    </div>
-    <!-- END CONTENT -->
+    </section>
+    <!-- End Accordion -->
+
+ {#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+
 </div>
-<!-- END CONTAINER -->
-<!-- BEGIN FOOTER -->
-<div class="page-footer">
-    <div class="page-footer-inner">
-        2017 &copy; Peculium.
-    </div>
-    <div class="scroll-to-top">
-        <i class="icon-arrow-up"></i>
-    </div>
-</div>
-<!-- END FOOTER -->
-<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
-<!-- BEGIN CORE PLUGINS -->
-<!--[if lt IE 9]>
-<script src="assets/global/plugins/respond.min.js"></script>
-<script src="assets/global/plugins/excanvas.min.js"></script>
-<![endif]-->
-<script src='{% static "assets/global/plugins/jquery.min.js" %}' type="text/javascript"></script>
-<script src='{% static "assets/global/plugins/jquery-migrate.min.js" %}' type="text/javascript"></script>
-<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-<script src='{% static "assets/global/plugins/jquery-ui/jquery-ui.min.js" %}' type="text/javascript"></script>
-<script src='{% static "assets/global/plugins/bootstrap/js/bootstrap.min.js" %}' type="text/javascript"></script>
-<script src='{% static "assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" %}'
-        type="text/javascript"></script>
-<script src='{% static "assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" %}'
-        type="text/javascript"></script>
-<script src='{% static "assets/global/plugins/jquery.blockui.min.js" %}' type="text/javascript"></script>
-<script src='{% static "assets/global/plugins/jquery.cokie.min.js " %}' type="text/javascript"></script>
-<script src='{% static "assets/global/plugins/uniform/jquery.uniform.min.js" %}' type="text/javascript"></script>
-<script src='{% static "assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" %}'
-        type="text/javascript"></script>
-<!-- END CORE PLUGINS -->
-<script src='{% static "assets/global/scripts/metronic.js" %}' type="text/javascript"></script>
-<script src='{% static "assets/admin/layout/scripts/layout.js" %}' type="text/javascript"></script>
-<script src='{% static "assets/admin/layout/scripts/quick-sidebar.js" %}' type="text/javascript"></script>
-<script src='{% static "assets/admin/layout/scripts/demo.js" %}' type="text/javascript"></script>
-<script>
-    jQuery(document).ready(function () {
-        Metronic.init(); // init metronic core components
-        Layout.init(); // init current layout
-        QuickSidebar.init(); // init quick sidebar
-        Demo.init(); // init demo features
-    });
+<!-- End wrapper -->
 
-
-     /*
-     * Basic Count Down to Date and Time
-     * Author: @mrwigster / trulycode.com
-     */
-    (function (e) {
-        e.fn.countdown = function (t, n) {
-            function i() {
-                eventDate = Date.parse(r.date) / 1e3;
-                currentDate = Math.floor(e.now() / 1e3);
-                if (eventDate <= currentDate) {
-                    n.call(this);
-                    clearInterval(interval)
-                }
-                seconds = eventDate - currentDate;
-                days = Math.floor(seconds / 86400);
-                seconds -= days * 60 * 60 * 24;
-                hours = Math.floor(seconds / 3600);
-                seconds -= hours * 60 * 60;
-                minutes = Math.floor(seconds / 60);
-                seconds -= minutes * 60;
-                days == 1 ? thisEl.find(".timeRefDays").text("day") : thisEl.find(".timeRefDays").text("days");
-                hours == 1 ? thisEl.find(".timeRefHours").text("hour") : thisEl.find(".timeRefHours").text("hours");
-                minutes == 1 ? thisEl.find(".timeRefMinutes").text("minute") : thisEl.find(".timeRefMinutes").text("minutes");
-                seconds == 1 ? thisEl.find(".timeRefSeconds").text("second") : thisEl.find(".timeRefSeconds").text("seconds");
-                if (r["format"] == "on") {
-                    days = String(days).length >= 2 ? days : "0" + days;
-                    hours = String(hours).length >= 2 ? hours : "0" + hours;
-                    minutes = String(minutes).length >= 2 ? minutes : "0" + minutes;
-                    seconds = String(seconds).length >= 2 ? seconds : "0" + seconds
-                }
-                if (!isNaN(eventDate)) {
-                    thisEl.find(".days").text(days);
-                    thisEl.find(".hours").text(hours);
-                    thisEl.find(".minutes").text(minutes);
-                    thisEl.find(".seconds").text(seconds)
-                } else {
-                    alert("Invalid date. Example: 30 Tuesday 2013 15:50:00");
-                    clearInterval(interval)
-                }
-            }
-
-            var thisEl = e(this);
-            var r = {
-                date: null,
-                format: null
-            };
-            t && e.extend(r, t);
-            i();
-            interval = setInterval(i, 1e3)
-        }
-    })(jQuery);
-    $(document).ready(function () {
-        function e() {
-            var e = new Date;
-            e.setDate(e.getDate() + 60);
-            dd = e.getDate();
-            mm = e.getMonth() + 1;
-            y = e.getFullYear();
-            futureFormattedDate = mm + "/" + dd + "/" + y;
-            return futureFormattedDate
-        }
-
-        $("#countdown").countdown({
-            date: "8 November 2017 09:00:00", // Change this to your desired date to countdown to
-            format: "on"
-        });
-    });
-
-    /*
-    progress bar
-    */
-    function move() {
-    var elem = document.getElementById("myBar");
-    var width = 10;
-    var id = setInterval(frame, 10);
-    function frame() {
-        if (width >= 100) {
-            clearInterval(id);
-        } else {
-            width++;
-            elem.style.width = width + '%';
-            elem.innerHTML = width * 1 + '%';
-        }
-    }
-}
-
-</script>
-<!-- END JAVASCRIPTS -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/new_pcl/js/jquery.js"><\/script>')</script>
+<script src='{% static "js/plugins.js" %}'></script>
+<script src='{% static "js/isotope.pkgd.min.js" %}'></script>
+<script type="text/javascript" src='{% static "js/progressbar.min.js" %}'></script>
+<!-- this is where we put our custom functions -->
+<script type="text/javascript" src='{% static "js/functions.js" %}'></script>
+<script type="text/javascript" src='{% static "js/profile.js" %}'></script>
 </body>
-<!-- END BODY -->
 </html>

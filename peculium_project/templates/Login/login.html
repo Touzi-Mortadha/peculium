@@ -1,138 +1,134 @@
 {% load staticfiles %}
-<!DOCTYPE html>
-
-<html lang="en">
-
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
 <head>
-    <meta charset="utf-8"/>
-    <title>Peculium | Login </title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <meta content="" name="description"/>
-    <meta content="" name="author"/>
-    <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
-    <link href='{% static "assets/global/plugins/font-awesome/css/font-awesome.min.css" %}' rel="stylesheet" type="text/css"/>
-    <link href='{% static "assets/global/plugins/simple-line-icons/simple-line-icons.min.css" %}' rel="stylesheet" type="text/css"/>
-    <link href='{% static "assets/global/plugins/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet" type="text/css"/>
-    <link href='{% static "assets/global/plugins/uniform/css/uniform.default.css" %}' rel="stylesheet" type="text/css"/>
-    <!-- END GLOBAL MANDATORY STYLES -->
-    <!-- BEGIN PAGE LEVEL STYLES -->
-    <link href='{% static "assets/admin/pages/css/login.css" %}' rel="stylesheet" type="text/css"/>
-    <!-- END PAGE LEVEL SCRIPTS -->
-    <!-- BEGIN THEME STYLES -->
-    <link href='{% static "assets/global/css/components.css" %}' id="style_components" rel="stylesheet" type="text/css"/>
-    <link href='{% static "assets/global/css/plugins.css" %}' rel="stylesheet" type="text/css"/>
-    <link href='{% static "assets/admin/layout/css/layout.css" %}' rel="stylesheet" type="text/css"/>
-    <link href='{% static "assets/admin/layout/css/themes/darkblue.css" %}' rel="stylesheet" type="text/css" id="style_color"/>
-    <link href='{% static "assets/admin/layout/css/custom.css" %}' rel="stylesheet" type="text/css"/>
-    <!-- END THEME STYLES -->
-    <link rel="shortcut icon" href="favicon.ico"/>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- Important stuff for SEO, don't neglect. (And don't dupicate values across your site!) -->
+    <title>Peculium | Login Or Create Acount</title>
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+
+    <!-- Don't forget to set your site up: http://google.com/webmasters -->
+    <meta name="google-site-verification" content="" />
+    <meta name="Copyright" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Use Iconifyer to generate all the favicons and touch icons you need: http://iconifier.net -->
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href='{% static "images/favicon/apple-touch-icon.png" %}' />
+    <link rel="apple-touch-icon" sizes="57x57" href='{% static "images/favicon/apple-touch-icon-57x57.png" %}'  />
+    <link rel="apple-touch-icon" sizes="72x72" href='{% static  "images/favicon/apple-touch-icon-72x72.png"%}' />
+    <link rel="apple-touch-icon" sizes="76x76" href='{% static "images/favicon/apple-touch-icon-76x76.png" %}' />
+    <link rel="apple-touch-icon" sizes="114x114" href='{% static "images/favicon/apple-touch-icon-114x114.png"%}' />
+    <link rel="apple-touch-icon" sizes="120x120" href='{% static "images/favicon/apple-touch-icon-120x120.png"  %}' />
+    <link rel="apple-touch-icon" sizes="144x144" href='{% static  "images/favicon/apple-touch-icon-144x144.png" %}' />
+    <link rel="apple-touch-icon" sizes="152x152" href='{% static "images/favicon/apple-touch-icon-152x152.png" %}' />
+
+    <!-- concatenate and minify for production -->
+    <link rel="stylesheet" href='{% static "css/style.css" type="text/css" media="all" %}' />
+    <link rel="stylesheet" href='{% static "css/magnific-popup.css" type="text/css" media="all"  %}' />
+    <link rel="stylesheet" href='{% static  "css/bootstrap.css" type="text/css" media="all" %}' />
+    <link rel="stylesheet" href='{% static "css/animate.min.css" type="text/css" media="all" %}' />
+
+    <link rel="stylesheet" href='{% static "css/magnific-popup.css" type="text/css" media="all" %}' />
+    <link rel="stylesheet" href='{% static "css/icon-fonts.css" type="text/css" media="all" %}' />
+
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <style>.theme_option {display: none !important;}</style>
 </head>
-<!-- END HEAD -->
-<!-- BEGIN BODY -->
-<body class="login">
-<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-<div class="menu-toggler sidebar-toggler">
+
+<!-- Class ( site_boxed - dark - preloader1 - preloader2 - preloader3 - light_header - dark_sup_menu - menu_button_mode - transparent_header - header_on_side ) -->
+<body class="preloader3 light_header">
+<div id="preloader">
+    <div class="spinner">
+        <div class="sk-dot1"></div><div class="sk-dot2"></div>
+        <div class="rect3"></div><div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
 </div>
-<!-- END SIDEBAR TOGGLER BUTTON -->
-<!-- BEGIN LOGO -->
-<div class="logo">
-    <a href="#" style="font-size: 40px">
-        PECULIUM
-    </a>
-</div>
-<!-- END LOGO -->
-<!-- BEGIN LOGIN -->
-<div class="content">
-    <!-- BEGIN LOGIN FORM -->
-    <form class="login-form" method="post">{% csrf_token %}
-        <h3 class="form-title">Sign In</h3>
-        <div class="alert alert-danger display-hide">
-            <button class="close" data-close="alert"></button>
-			<span>
-			Enter any username and password. </span>
-        </div>
-        <div class="form-group">
-            <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
-            <label class="control-label visible-ie8 visible-ie9">Username</label>
-            <input id="id_username" name="username" type="text" class="form-control form-control-solid placeholder-no-fix" autocomplete="off" placeholder="Username" name="username">
-        </div>
-        <div class="form-group">
-            <label class="control-label visible-ie8 visible-ie9">Password</label>
-            <input id="id_password" name="password" type="password" class="form-control form-control-solid placeholder-no-fix" autocomplete="off" placeholder="Password" name="password">
-        </div>
-        {% if form.errors %}
+
+<div id="main_wrapper">
+
+    <!-- Section -->
+    <section class="content_section bg5" style="height: 100vh;">
+        <div class="content row_spacer centered clearfix">
+            <div class="main_title side_line centered upper">
+                <h2><span class="line"></span>Get started with Create Account</h2>
+            </div>
+
+            <div class="my_col_half on_the_center centered clearfix">
+                <form class="login_form_colored shadow1 login_flip owl-goDown-in flip_top" method="post" action=""> {% csrf_token %}
+                    <input type="hidden" name="_token" value="KZLTjrJvM0LoKR22odbhbeFfwXd1VH74hGansMCB">
+                    <div class="lfc_user_row">
+                        <span class="lfc_header">Login to your Account Or <a href="{% url 'signup' %}">Sign Up</a></span>
+                    </div>
+                    <div class="lfc_user_row">
+                        <label for="login_user_name">
+							<span class="label_space">
+								<span class="hm_field_name">Username</span>
+								<span class="hm_requires_star">*</span>
+							</span>
+                            <input class="input_no_icon" type="text" name="username" id="login_user_name">
+                        </label>
+                    </div>
+                    <div class="lfc_user_row">
+                        <label for="login_password">
+							<span class="label_space">
+								<span class="hm_field_name">Password</span>
+								<span class="hm_requires_star">*</span>
+							</span>
+                            <input class="input_no_icon" type="password" name="password" id="login_password">
+                        </label>
+                    </div>
+                    <div class="lfc_user_row clearfix">
+                        <div class="my_col_third">
+                            <label for="rememberme">
+								<span class="remember-box">
+									<input type="checkbox" id="rememberme" name="rememberme">
+									<span>Remember me</span>
+								</span>
+                            </label>
+                        </div>
+
+                        {% if form.errors %}
                     <p class=" label label-danger">
                         Your username and password didn't match.
                         Please try again.
                     </p>
                 {% endif %}
-        <div class="form-actions">
-            <input type="submit" value="Login" class="btn btn-success uppercase"/>
-            <label class="rememberme check">
-                <input type="checkbox" name="remember" value="1"/>Remember </label>
-            <a href="{% url 'password_reset' %}" id="forget-password" class="forget-password">Forgot Password?</a>
+
+
+                        <div class="clearfix">
+                            <button type="submit" name="login" class="send_button f_right margin_left_a">
+                                Sign in
+                            </button>
+                        </div>
+                    </div>
+                    <a class="lfc_forget_pass" href="{% url 'password_reset' %}">Forgot Your Password?</a>
+                </form>
+            </div>
         </div>
-        <div class="create-account">
-            <p>
-                <a href="{% url 'signup' %}" id="register-btn" class="uppercase">Create an account</a>
-            </p>
-        </div>
-    </form>
-    <!-- END LOGIN FORM -->
-    <!-- BEGIN FORGOT PASSWORD FORM -->
-{#    <form class="forget-form" action="#" method="post">#}
-{#        <h3>Forget Password ?</h3>#}
-{#        <p>#}
-{#            Enter your e-mail address below to reset your password.#}
-{#        </p>#}
-{#        <div class="form-group">#}
-{#            <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Email" name="email"/>#}
-{#        </div>#}
-{#        <div class="form-actions">#}
-{#            <button type="button" id="back-btn" class="btn btn-default">Back</button>#}
-{#            <button type="submit" class="btn btn-success uppercase pull-right">Submit</button>#}
-{#        </div>#}
-{#    </form>#}
+    </section>
+    <!-- End Section -->
 
 </div>
-<div class="copyright">
-    2017 © Peculium.
-</div>
-<!-- END LOGIN -->
-<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
-<!-- BEGIN CORE PLUGINS -->
-<!--[if lt IE 9]-->
-<script src='{% static "assets/global/plugins/respond.min.js" %}'></script>
-<script src='{% static "assets/global/plugins/excanvas.min.js" %}'></script>
-<!--[endif]-->
-<script src='{% static "assets/global/plugins/jquery.min.js"%}' type="text/javascript"></script>
-<script src='{% static "assets/global/plugins/jquery-migrate.min.js" %}' type="text/javascript"></script>
-<script src='{% static "assets/global/plugins/bootstrap/js/bootstrap.min.js" %}' type="text/javascript"></script>
-<script src='{% static "assets/global/plugins/jquery.blockui.min.js" %}' type="text/javascript"></script>
-<script src='{% static "assets/global/plugins/jquery.cokie.min.js" %}' type="text/javascript"></script>
-<script src='{% static "assets/global/plugins/uniform/jquery.uniform.min.js" %}' type="text/javascript"></script>
-<!-- END CORE PLUGINS -->
-<!-- BEGIN PAGE LEVEL PLUGINS -->
-<script src='{% static "assets/global/plugins/jquery-validation/js/jquery.validate.min.js"%}' type="text/javascript"></script>
-<!-- END PAGE LEVEL PLUGINS -->
-<!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src='{% static "assets/global/scripts/metronic.js" %}' type="text/javascript"></script>
-<script src='{% static "assets/admin/layout/scripts/layout.js" %}' type="text/javascript"></script>
-<script src='{% static "assets/admin/layout/scripts/demo.js" %}' type="text/javascript"></script>
-<script src='{% static "assets/admin/pages/scripts/login.js" %}' type="text/javascript"></script>
-<!-- END PAGE LEVEL SCRIPTS -->
-<script>
-    jQuery(document).ready(function() {
-        Metronic.init(); // init metronic core components
-        Layout.init(); // init current layout
-        Login.init();
-        Demo.init();
-    });
-</script>
-<!-- END JAVASCRIPTS -->
+<!-- End wrapper -->
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>')</script>
+<script src='{% static "js/plugins.js" %}'></script>
+<script src='{% static "js/isotope.pkgd.min.js" %}'></script>
+<script type="text/javascript" src='{% static "js/progressbar.min.js" %}'></script>
+<!-- this is where we put our custom functions -->
+<script type="text/javascript" src='{% static "js/functions.js" %}'></script>
 </body>
-<!-- END BODY -->
 </html>
