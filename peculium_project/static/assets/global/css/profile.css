@@ -1,0 +1,20 @@
+#countdown p {
+  display: inline-block;
+  padding: 10px;
+  background: #0003ff;
+  margin: 0 0 20px;
+}
+
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 10%;
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}

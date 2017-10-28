@@ -57,3 +57,5 @@ function GetNewAmmount() {
 setInterval(GetNewAmmount, 1000);
 
 /* ***************************************************** */
+
+
