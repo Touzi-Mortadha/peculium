@@ -23,10 +23,10 @@ from ..payment.models import ConfiTCL
 from rest_framework import viewsets
 from ..payment.serializers import ConfiTCLSerializer
 from .serializers import UserProfileSerializer
-from .models import UserProfile
+from .models import UserProfile, Transaction
 from .forms import SignUpForm
 from ..payment.forms import ConfigPCLForm, ConfigUsedTCLForm
-
+import datetime
 class IndexView(TemplateView):
     template_name = "home.html"
 
@@ -98,6 +98,13 @@ class UpdateUserView(TemplateView):
             obj=form.save(commit=False)
             obj.TCL_USED=tmp+form.cleaned_data['TCL_USED']
             obj.save()
+            transaction=Transaction()
+            transaction.user= request.user.userprofile
+            transaction.date_of_transaction = datetime.datetime.now().date()
+            transaction.time_of_transaction=datetime.datetime.now().time()
+            transaction.TCL_assigned= form.cleaned_data['TCL_USED']
+            transaction.save()
+
             context = {'amount': inst.PCL_amount,
                        'number_of_tokens': inst.number_of_PCL,
                        'user': self.request.user,
