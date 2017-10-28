@@ -13,6 +13,18 @@ class UserProfile(models.Model):
     cin = models.IntegerField(blank=True, null=True)  # this one is temporary
     email_confirmed = models.BooleanField(default=False)
 
+    def __str__(self):
+        return str(self.user.username)
+
+class Transaction(models.Model):
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='transactions')
+    date_of_transaction= models.DateField()
+    time_of_transaction=models.TimeField()
+    amount_sent=models.FloatField()
+    TCL_assigned=models.FloatField()
+
+    def __str__(self):
+        return str(self.id)
 
 @receiver(post_save, sender=User)
 def update_user_profile(sender, instance, created, **kwargs):
