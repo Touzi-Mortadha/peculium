@@ -116,6 +116,7 @@ class UpdateUserView(TemplateView):
         userr = User.objects.get(username='peculium')
         inst = ConfiTCL.objects.get(user=userr)
         form = ConfigUsedTCLForm(instance=inst)
+        print(self.request.user.userprofile.public_rib)
         context = {'amount': inst.PCL_amount,
                    'all_amount':inst.PCL_amount*inst.number_of_PCL,
                    'number_of_tokens': inst.number_of_PCL,

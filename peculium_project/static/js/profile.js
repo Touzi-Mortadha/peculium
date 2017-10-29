@@ -106,6 +106,8 @@ jQuery(document).ready(GetHistory);
 
 
 
+
+
 function Cryptocompare() {
 
     $.ajax({
