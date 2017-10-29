@@ -58,6 +58,9 @@ class signup(View):
             user = form.save(commit=False)
             user.is_active = False
             user.save()
+            if form.data['public_rib']:
+                user.userprofile.public_rib=form.cleaned_data.get('public_rib')
+                user.userprofile.save()
             current_site = get_current_site(request)
             subject = 'Activate Your Peculium Account'
             message = render_to_string('activation_email/account_activation_email.html', {
