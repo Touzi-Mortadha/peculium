@@ -109,10 +109,13 @@ class UpdateUserView(TemplateView):
             transaction.time_of_transaction = datetime.datetime.now().time()
             transaction.TCL_assigned = form.cleaned_data['TCL_USED']
             transaction.save()
+
             return redirect('profile')
+        user_buy = UserProfile.objects.filter(buy=True).count()
         context = {'amount': inst.PCL_amount,
                    'number_of_tokens': inst.number_of_PCL,
                    'user': self.request.user,
+                   'user_buy': user_buy,
                    'form': form}
         return render(request, self.template_name, context)
 
