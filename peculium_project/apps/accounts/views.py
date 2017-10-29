@@ -27,6 +27,8 @@ from .models import UserProfile, Transaction
 from .forms import SignUpForm
 from ..payment.forms import ConfigPCLForm, ConfigUsedTCLForm
 import datetime
+
+
 class IndexView(TemplateView):
     template_name = "home.html"
 
@@ -78,9 +80,6 @@ class signup(View):
         return render(request, self.template_name, {'form': form})
 
 
-
-
-
 class UpdateUserView(TemplateView):
     template_name = "profile.html"
 
@@ -95,33 +94,36 @@ class UpdateUserView(TemplateView):
         tmp = inst.TCL_USED
         form = ConfigUsedTCLForm(request.POST, instance=inst)
         if form.is_valid():
-            obj=form.save(commit=False)
-            obj.TCL_USED=tmp+form.cleaned_data['TCL_USED']
+            obj = form.save(commit=False)
+            obj.TCL_USED = tmp + form.cleaned_data['TCL_USED']
+            activ = self.request.user.userprofile
+            activ.buy=True
+            activ.save()
             obj.save()
-            transaction=Transaction()
-            transaction.user= request.user.userprofile
+            transaction = Transaction()
+            transaction.user = request.user.userprofile
             transaction.date_of_transaction = datetime.datetime.now().date()
-            transaction.time_of_transaction=datetime.datetime.now().time()
-            transaction.TCL_assigned= form.cleaned_data['TCL_USED']
+            transaction.time_of_transaction = datetime.datetime.now().time()
+            transaction.TCL_assigned = form.cleaned_data['TCL_USED']
             transaction.save()
-
-            context = {'amount': inst.PCL_amount,
-                       'number_of_tokens': inst.number_of_PCL,
-                       'user': self.request.user,
-                       'form': form}
             return redirect('profile')
-        return render(request, self.template_name)
+        context = {'amount': inst.PCL_amount,
+                   'number_of_tokens': inst.number_of_PCL,
+                   'user': self.request.user,
+                   'form': form}
+        return render(request, self.template_name, context)
 
     def get(self, request, *args, **kwargs):
         userr = User.objects.get(username='peculium')
         inst = ConfiTCL.objects.get(user=userr)
         form = ConfigUsedTCLForm(instance=inst)
-        print(self.request.user.userprofile.public_rib)
+        user_buy = UserProfile.objects.filter(buy=True).count()
         context = {'amount': inst.PCL_amount,
-                   'all_amount':inst.PCL_amount*inst.number_of_PCL,
+                   'all_amount': inst.PCL_amount * inst.number_of_PCL,
                    'number_of_tokens': inst.number_of_PCL,
-                   'TCL_USED':inst.TCL_USED,
+                   'TCL_USED': inst.TCL_USED,
                    'user': self.request.user,
+                   'user_buy':user_buy,
                    'form': form}
         return TemplateResponse(request, self.template_name, context)
 
@@ -129,9 +131,6 @@ class UpdateUserView(TemplateView):
         #     context = super(UpdateUserView, self).get_context_data(**kwargs)
         #     context['user'] = self.request.user
         #     return context
-
-
-
 
 
 class UpdateAdminView(TemplateView):
@@ -197,10 +196,3 @@ class ConfiTCLViewSet(viewsets.ModelViewSet):
 class UserProfileViewSet(viewsets.ModelViewSet):
     queryset = UserProfile.objects.all()
     serializer_class = UserProfileSerializer
-
-
-
-
-
-
-

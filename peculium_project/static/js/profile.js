@@ -74,7 +74,7 @@ function GetHistory() {
                 console.log("GetHistory is working");
                 console.log(data['transactions']);
 
-                var sorted_transactions =data['transactions']
+                var sorted_transactions =data['transactions'];
                 sorted_transactions.forEach(function (element) {
 
                     var date_of_trasaction=element.date_of_transaction;
@@ -83,9 +83,8 @@ function GetHistory() {
                     var amount_sent=element.amount_sent;
                     var pcl_assignd=element.TCL_assigned;
                     var verified= element.verified;
-                    $("#history").prepend("<tr style='text-align: center;'><td style='padding: 20px;'>".concat(date_of_trasaction,"</td><td style='padding: 20px;'>",time_of_transaction,"</td><td style='padding: 20px;' >",transaction_id,"</td><td style='padding: 20px;'>",amount_sent,"</td><td style='padding: 20px;'>",pcl_assignd,"</td><td>",verified,"</td></tr>"))
+                    $("#history").prepend("<tr style='text-align: center;'><td style='padding: 20px;'>".concat(date_of_trasaction,"</td><td style='padding: 20px;'>",time_of_transaction,"</td><td style='padding: 20px;' >",transaction_id,"</td><td style='padding: 20px;'>",amount_sent,"</td><td style='padding: 20px;'>",pcl_assignd,"</td><td>",verified,"</td></tr>"));
                 });
-
             },
 
             error: function () {
