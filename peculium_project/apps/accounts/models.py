@@ -11,6 +11,7 @@ class UserProfile(models.Model):
     numero = models.IntegerField(blank=True, null=True)
     cin = models.IntegerField(blank=True, null=True)  # this one is temporary
     email_confirmed = models.BooleanField(default=False)
+    public_rib= models.CharField(max_length=100, blank=True, null=True)
 
     def __str__(self):
         return str(self.user.username)
