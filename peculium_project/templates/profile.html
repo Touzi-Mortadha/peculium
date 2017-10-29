@@ -4,57 +4,69 @@
 <!--[if IE 7 ]>    <html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
 <!--[if IE 8 ]>    <html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
 <!--[if IE 9 ]>    <html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
-<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en"><!--<![endif]-->
 <!-- the "no-js" class is for Modernizr. -->
 <head>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
     <!-- Important stuff for SEO, don't neglect. (And don't dupicate values across your site!) -->
     <title>Peculium | Sale Token</title>
-    <meta name="author" content="" />
-    <meta name="description" content="" />
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
 
     <!-- Don't forget to set your site up: http://google.com/webmasters -->
-    <meta name="google-site-verification" content="" />
-    <meta name="Copyright" content="" />
+    <meta name="google-site-verification" content=""/>
+    <meta name="Copyright" content=""/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Use Iconifyer to generate all the favicons and touch icons you need: http://iconifier.net -->
-    <link rel="shortcut icon" href='{% static "new_pcl/images/favicon/favicon.ico" %}' type="image/x-icon" />
-    <link rel="apple-touch-icon" href='{% static "new_pcl/images/favicon/apple-touch-icon.png" %}' />
-    <link rel="apple-touch-icon" sizes="57x57" href='{% static "new_pcl/images/favicon/apple-touch-icon-57x57.png" %}' />
-    <link rel="apple-touch-icon" sizes="72x72" href='{% static "new_pcl/images/favicon/apple-touch-icon-72x72.png" %}' />
-    <link rel="apple-touch-icon" sizes="76x76" href='{% static "new_pclimages/favicon/apple-touch-icon-76x76.png" %}' />
-    <link rel="apple-touch-icon" sizes="114x114" href='{% static "new_pcl/images/favicon/apple-touch-icon-114x114.png" %}' />
-    <link rel="apple-touch-icon" sizes="120x120" href='{% static "new_pcl/images/favicon/apple-touch-icon-120x120.png" %} '/>
-    <link rel="apple-touch-icon" sizes="144x144" href='{% static "new_pcl/images/favicon/apple-touch-icon-144x144.png" %}' />
-    <link rel="apple-touch-icon" sizes="152x152" href='{% static "new_pcl/images/favicon/apple-touch-icon-152x152.png" %}' />
+    <link rel="shortcut icon" href='{% static "new_pcl/images/favicon/favicon.ico" %}' type="image/x-icon"/>
+    <link rel="apple-touch-icon" href='{% static "new_pcl/images/favicon/apple-touch-icon.png" %}'/>
+    <link rel="apple-touch-icon" sizes="57x57" href='{% static "new_pcl/images/favicon/apple-touch-icon-57x57.png" %}'/>
+    <link rel="apple-touch-icon" sizes="72x72" href='{% static "new_pcl/images/favicon/apple-touch-icon-72x72.png" %}'/>
+    <link rel="apple-touch-icon" sizes="76x76" href='{% static "new_pclimages/favicon/apple-touch-icon-76x76.png" %}'/>
+    <link rel="apple-touch-icon" sizes="114x114"
+          href='{% static "new_pcl/images/favicon/apple-touch-icon-114x114.png" %}'/>
+    <link rel="apple-touch-icon" sizes="120x120"
+          href='{% static "new_pcl/images/favicon/apple-touch-icon-120x120.png" %} '/>
+    <link rel="apple-touch-icon" sizes="144x144"
+          href='{% static "new_pcl/images/favicon/apple-touch-icon-144x144.png" %}'/>
+    <link rel="apple-touch-icon" sizes="152x152"
+          href='{% static "new_pcl/images/favicon/apple-touch-icon-152x152.png" %}'/>
 
     <!-- concatenate and minify for production -->
-    <link rel="stylesheet" href='{% static "new_pcl/css/style.css" %}' type="text/css" media="all" />
-    <link rel="stylesheet" href='{% static "new_pcl/css/magnific-popup.css" %}' type="text/css" media="all" />
-    <link rel="stylesheet" href='{% static "new_pcl/css/bootstrap.css" %}' type="text/css" media="all" />
-    <link rel="stylesheet" href='{% static "new_pcl/css/animate.min.css" %}' type="text/css" media="all" />
+    <link rel="stylesheet" href='{% static "new_pcl/css/style.css" %}' type="text/css" media="all"/>
+    <link rel="stylesheet" href='{% static "new_pcl/css/magnific-popup.css" %}' type="text/css" media="all"/>
+    <link rel="stylesheet" href='{% static "new_pcl/css/bootstrap.css" %}' type="text/css" media="all"/>
+    <link rel="stylesheet" href='{% static "new_pcl/css/animate.min.css" %}' type="text/css" media="all"/>
 
-    <link rel="stylesheet" href='{% static "new_pcl/css/magnific-popup.css" %}' type="text/css" media="all" />
-    <link rel="stylesheet" href='{% static "new_pcl/css/icon-fonts.css" %}' type="text/css" media="all" />
+    <link rel="stylesheet" href='{% static "new_pcl/css/magnific-popup.css" %}' type="text/css" media="all"/>
+    <link rel="stylesheet" href='{% static "new_pcl/css/icon-fonts.css" %}' type="text/css" media="all"/>
 
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-    <style>.theme_option {display: none !important;}</style>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,300italic,400italic,600,600italic,700,700italic,800,800italic'
+          rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic'
+          rel='stylesheet' type='text/css'>
+    <style>.theme_option {
+        display: none !important;
+    }</style>
     <script>
-    var current_user = {{ user.id }}
-</script>
+        var current_user =
+        {{ user.id }}
+    </script>
 </head>
 
 <!-- Class ( site_boxed - dark - preloader1 - preloader2 - preloader3 - light_header - dark_sup_menu - menu_button_mode - transparent_header - header_on_side ) -->
 <body class="preloader3 light_header">
 <div id="preloader">
     <div class="spinner">
-        <div class="sk-dot1"></div><div class="sk-dot2"></div>
-        <div class="rect3"></div><div class="rect4"></div>
+        <div class="sk-dot1"></div>
+        <div class="sk-dot2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
         <div class="rect5"></div>
     </div>
 </div>
@@ -71,7 +83,7 @@
         </div>
     </section>
 
-     {#+++++++++++++++++++++++++++++ ACCORDION ++++++++++++++++++++++++++++++#}
+    {#+++++++++++++++++++++++++++++ ACCORDION ++++++++++++++++++++++++++++++#}
     <section>
 
         <div class="container">
@@ -124,7 +136,7 @@
                         </div>
 
 
-                         {#++++++++++++++++++++   Prpgress bar +++++++++++++++++++++++++++++++++++++++#}
+                        {#++++++++++++++++++++   Prpgress bar +++++++++++++++++++++++++++++++++++++++#}
 
                         <div class="enar_occ_container" data-expanded="true">
                             <span class="enar_occ_title">Tokensale progress</span>
@@ -147,7 +159,7 @@
                                 </div>
                             </div>
                         </div>
-                         {#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+                        {#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
 
                         <div class="enar_occ_container" data-expanded="true">
                             <span class="enar_occ_title">Tokensale status</span>
@@ -180,7 +192,8 @@
                                                  data-animation-delay="300">
                                                 <span class="icon"><img src='{% static "new_pcl/images/icon/eth.png" %}'
                                                                         width="40"></span>
-                                                <span class="value" data-speed="4000" data-from="0" data-to="1" id="eth">1</span>
+                                                <span class="value" data-speed="4000" data-from="0" data-to="1"
+                                                      id="eth">1</span>
                                                 <span class="title">ETH</span>
                                             </div>
                                         </div>
@@ -189,16 +202,19 @@
                                                  data-animation-delay="600">
                                                 <span class="icon"><img src='{% static "new_pcl/images/icon/btc.png" %}'
                                                                         width="40"></span>
-                                                <span class="value" data-speed="4000" data-from="0" data-to="0" id="btc">0</span>
+                                                <span class="value" data-speed="4000" data-from="0" data-to="0"
+                                                      id="btc">0</span>
                                                 <span class="title">BTC</span>
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="counter animated fadeInDown visible" data-animation="fadeInDown"
                                                  data-animation-delay="900">
-                                                <span class="icon"><img src='{% static "new_pcl/images/icon/dollar.png" %}'
-                                                                        width="40"></span>
-                                                <span class="value" data-speed="4000" data-from="0" data-to="0" id="euro"></span>
+                                                <span class="icon"><img
+                                                        src='{% static "new_pcl/images/icon/dollar.png" %}'
+                                                        width="40"></span>
+                                                <span class="value" data-speed="4000" data-from="0" data-to="0"
+                                                      id="euro"></span>
                                                 <span class="title">EUR</span>
                                             </div>
                                         </div>
@@ -214,14 +230,16 @@
                                 <div class="acc_content">
                                     <div class="welcome_banner boxed_colored">
                                         <div class="content clearfix">
-                                            <form class="hm_contact_form full_contact_form" method="post">{% csrf_token %}
+                                            <form class="hm_contact_form full_contact_form"
+                                                  method="post">{% csrf_token %}
                                                 <div class="row">
                                                     <div class="col-sm-5">
                                                         <div class="form_row clearfix">
                                                             <label for="buy" style="color: #fff; text-align: center">
                                                                 <span class="hm_field_name">Your buy</span>
                                                             </label>
-                                                            <input class="hm_input_text" name="TCL_USED" id="buy" type="text"
+                                                            <input class="hm_input_text" name="TCL_USED" id="buy"
+                                                                   type="text"
                                                                    value="0">
                                                             <label for="buy" style="color: #fff; text-align: center">
                                                                 <span class="hm_field_name">PCL</span>
@@ -265,12 +283,16 @@
                                                                                 class="main_button color1 medium_btn bottom_space"><a
                                                                                 id="calculator-currency-btn"
                                                                                 data-code="eur"
-                                                                                class="btn-select current-currency ng-binding" style="color: #fff">Euro</a><span
+                                                                                class="btn-select current-currency ng-binding"
+                                                                                style="color: #fff">Euro</a><span
                                                                                 class="caret"></span></button>
                                                                         <ul role="menu" class="dropdown-menu">
-                                                                            <li><a data-code="eth" class="calculator-currency">Ethereum</a></li>
-                                                                            <li><a data-code="btc" class="calculator-currency">Bitcoin</a></li>
-                                                                            <li><a data-code="eur" class="calculator-currency">Euro</a></li>
+                                                                            <li><a data-code="eth"
+                                                                                   class="calculator-currency">Ethereum</a></li>
+                                                                            <li><a data-code="btc"
+                                                                                   class="calculator-currency">Bitcoin</a></li>
+                                                                            <li><a data-code="eur"
+                                                                                   class="calculator-currency">Euro</a></li>
                                                                         </ul>
                                                                     </div>
                                                                 </span>
@@ -291,7 +313,7 @@
                             </div>
                         </div>
 
-                         {#+++++++++++++++++++++++++ Transaction history ++++++++++++++++++++++++++++++++++#}
+                        {#+++++++++++++++++++++++++ Transaction history ++++++++++++++++++++++++++++++++++#}
 
                         <div class="enar_occ_container" data-expanded="true">
                             <span class="enar_occ_title">Your transaction history</span>
@@ -312,8 +334,8 @@
                                             </tr>
                                             </thead>
                                             <tbody id="history">
-                                            <tr >
-                                                <td  >
+                                            <tr>
+                                                <td>
                                                 </td>
                                             </tr><!-- end ngIf: model.transactions.length === 0 --></tbody>
                                         </table>
@@ -324,7 +346,7 @@
                         </div>
                     </div>
 
-                     {#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+                    {#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
                     <!-- End My Accordion -->
                 </div>
                 <!-- End col-md-6 -->
@@ -344,55 +366,54 @@
                         </div>
 
 
-                        </div>
-                        <hr>
+                    </div>
+                    <hr>
 
-                        <div><h4>Your tokens</h4>
-
-                                {% if not user.userprofile.public_rib %}
+                    <div><h4>Your tokens</h4>
+                        {% if not user.userprofile.public_rib %}
 
                             <div class="alert alert-warning"><a href="#" style="font-size: 1.5rem">
                                 Please setup your Ethereum address to receive PCL tokens</a></div>
-                        </div>
+                            </div>
 
-                    {% endif %}
-                        <div class="item ng-hide">
-                            <table class="table personalinfo no-border">
-                                <tbody>
-                                <tr>
-                                    <td class="ng-binding">Tokens you hold</td>
-                                    <th class="lead text-right ng-binding">0</th>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <a href="#" class="btn btn-block btn-lg btn-theme ng-binding">Buy tokens</a>
-                        <hr>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#" title="Twitter"
-                                   target="_blank"><i class="ico-twitter"></i></a></li>
-                            <li><a href="#" title="Facebook"
-                                   target="_blank"><i class="ico-facebook"></i></a></li><!-- li-->
-                            <!--   a(href='https://medium.com/@lydian', alt='medium', title='medium', target='_blank')-->
-                            <!--     i.fa.fa-medium--><!-- li-->
-                            <!--   a(href='https://bitcointalk.org/index.php?topic=9999999.0', alt='btc', title='btc', target='_blank')-->
-                            <!--     i.fa.fa-btc-->
-                            <li><a href="#" title="mail" target="_blank"><i class="ico-mail5"></i></a></li>
-                        </ul>
+                        {% endif %}
+                    <div class="item ng-hide">
+                        <table class="table personalinfo no-border">
+                            <tbody>
+                            <tr>
+                                <td class="ng-binding">Tokens you hold</td>
+                                <th class="lead text-right ng-binding">0</th>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
+                    <a href="#" class="btn btn-block btn-lg btn-theme ng-binding">Buy tokens</a>
+                    <hr>
+                    <ul class="list-inline social-buttons">
+                        <li><a href="#" title="Twitter"
+                               target="_blank"><i class="ico-twitter"></i></a></li>
+                        <li><a href="#" title="Facebook"
+                               target="_blank"><i class="ico-facebook"></i></a></li><!-- li-->
+                        <!--   a(href='https://medium.com/@lydian', alt='medium', title='medium', target='_blank')-->
+                        <!--     i.fa.fa-medium--><!-- li-->
+                        <!--   a(href='https://bitcointalk.org/index.php?topic=9999999.0', alt='btc', title='btc', target='_blank')-->
+                        <!--     i.fa.fa-btc-->
+                        <li><a href="#" title="mail" target="_blank"><i class="ico-mail5"></i></a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- End Accordion -->
+</div>
+</section>
+<!-- End Accordion -->
 
- {#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+{#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
 
 </div>
 <!-- End wrapper -->
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="/new_pcl/js/jquery.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="/static/new_pcl/js/jquery.js"><\/script>')</script>
 <script src='{% static "js/plugins.js" %}'></script>
 <script src='{% static "js/isotope.pkgd.min.js" %}'></script>
 <script type="text/javascript" src='{% static "js/progressbar.min.js" %}'></script>
