@@ -37,7 +37,7 @@ function GetNewAmmount() {
 
     $.ajax({
             type: 'GET',
-            url: '/api/pcl/2/',
+            url: '/api/pcl/1/',
             dataType: "json",
             success: function (data) {
                 console.log("GetNewAmmount is working");
