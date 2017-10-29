@@ -117,7 +117,9 @@ class UpdateUserView(TemplateView):
         inst = ConfiTCL.objects.get(user=userr)
         form = ConfigUsedTCLForm(instance=inst)
         context = {'amount': inst.PCL_amount,
+                   'all_amount':inst.PCL_amount*inst.number_of_PCL,
                    'number_of_tokens': inst.number_of_PCL,
+                   'TCL_USED':inst.TCL_USED,
                    'user': self.request.user,
                    'form': form}
         return TemplateResponse(request, self.template_name, context)
