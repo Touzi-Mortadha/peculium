@@ -15,6 +15,8 @@ class UserProfile(models.Model):
     banc_rib = models.CharField(max_length=100, blank=True, null=True)
     BTC_rib = models.CharField(max_length=100, blank=True, null=True)
     ETH_rib = models.CharField(max_length=100, blank=True, null=True)
+    buy = models.BooleanField(default=False)
+
 
     def __str__(self):
         return str(self.user.username)
