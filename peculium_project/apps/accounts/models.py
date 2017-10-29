@@ -12,6 +12,9 @@ class UserProfile(models.Model):
     cin = models.IntegerField(blank=True, null=True)  # this one is temporary
     email_confirmed = models.BooleanField(default=False)
     public_rib= models.CharField(max_length=100, blank=True, null=True)
+    banc_rib = models.CharField(max_length=100, blank=True, null=True)
+    BTC_rib = models.CharField(max_length=100, blank=True, null=True)
+    ETH_rib = models.CharField(max_length=100, blank=True, null=True)
 
     def __str__(self):
         return str(self.user.username)
