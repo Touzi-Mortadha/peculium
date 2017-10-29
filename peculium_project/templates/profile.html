@@ -346,11 +346,16 @@
 
                         </div>
                         <hr>
+
                         <div><h4>Your tokens</h4>
 
+                            {% if not user.userprofile.public_rib %}
+
                             <div class="alert alert-warning"><a href="#" style="font-size: 1.5rem">
-                                Please setup your Ethereum address to receive LDN tokens</a></div>
+                                Please setup your Ethereum address to receive PCL tokens</a></div>
                         </div>
+
+                    {% endif %}
                         <div class="item ng-hide">
                             <table class="table personalinfo no-border">
                                 <tbody>
