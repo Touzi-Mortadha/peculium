@@ -180,7 +180,7 @@
                                                  data-animation-delay="300">
                                                 <span class="icon"><img src='{% static "new_pcl/images/icon/eth.png" %}'
                                                                         width="40"></span>
-                                                <span class="value" data-speed="4000" data-from="1" data-to="1">1</span>
+                                                <span class="value" data-speed="4000" data-from="1" data-to="1" id="eth">1</span>
                                                 <span class="title">ETH</span>
                                             </div>
                                         </div>
@@ -189,7 +189,7 @@
                                                  data-animation-delay="600">
                                                 <span class="icon"><img src='{% static "new_pcl/images/icon/btc.png" %}'
                                                                         width="40"></span>
-                                                <span id="btc">0</span>
+                                                <span class="value" data-speed="4000" data-from="0" data-to="0" id="btc">0</span>
                                                 <span class="title">BTC</span>
                                             </div>
                                         </div>
@@ -199,7 +199,7 @@
                                                 <span class="icon"><img src='{% static "new_pcl/images/icon/dollar.png" %}'
                                                                         width="40"></span>
                                                 <span class="value" data-speed="4000" data-from="0" data-to="0" id="euro"></span>
-                                                <span class="title">USD</span>
+                                                <span class="title">EUR</span>
                                             </div>
                                         </div>
                                     </div>
@@ -222,7 +222,7 @@
                                                                 <span class="hm_field_name">Your buy</span>
                                                             </label>
                                                             <input class="hm_input_text" name="TCL_USED" id="buy" type="text"
-                                                                   value="10">
+                                                                   value="0">
                                                             <label for="buy" style="color: #fff; text-align: center">
                                                                 <span class="hm_field_name">PCL</span>
                                                             </label>
@@ -255,7 +255,7 @@
                                                                 <span class="hm_field_name">Your pay</span>
                                                             </label>
                                                             <input class="hm_input_text" name="pay" id="pay" type="text"
-                                                                   disabled readonly value="1000"
+                                                                   disabled readonly value="0"
                                                                    data-price="100">
                                                             <label for="pay" style="color: #fff; text-align: center">
                                                                 <span class="hm_field_name">

@@ -6,9 +6,22 @@
 			  $(this).remove();
 		 }); 
     });
+
 	$('#buy').on('input',function(e){
-		$("#pay").val(Math.ceil($(this).val()*$("#pay").data('price')));
+		var price = 0;
+		if(document.getElementById("calculator-currency-btn").innerHTML =="Euro")
+		{
+			price=document.getElementById("euro").innerHTML;
+		}
+		else if(document.getElementById("calculator-currency-btn").innerHTML =="Bitcoin"){
+			price=document.getElementById("btc").innerHTML;
+		}
+		else if(document.getElementById("calculator-currency-btn").innerHTML =="Ethereum"){
+			price=document.getElementById("eth").innerHTML;
+		}
+		$("#pay").val(Math.ceil($(this).val()*price));
 	});
+
 	$('.calculator-currency').on('click',function(e){
 		var curr = $(this).data('code');
 		var text = $(this).text();
