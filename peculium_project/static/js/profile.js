@@ -41,8 +41,8 @@ function GetNewAmmount() {
             dataType: "json",
             success: function (data) {
                 console.log("GetNewAmmount is working");
-                console.log(data['PCL_amount'])
-                $("#amount").text(data['PCL_amount'])
+                console.log(data['PCL_amount']);
+                $("#amount").text(data['PCL_amount']*data['number_of_PCL']);
                 $("#number_of_PCL").text(data['number_of_PCL'])
             },
 
@@ -100,6 +100,7 @@ jQuery(document).ready(GetHistory);
 
 
 
+
 /* ***************************************************** */
 /* ****************** Cryptocompare *********************************** */
 
@@ -109,13 +110,14 @@ function Cryptocompare() {
 
     $.ajax({
             type: 'GET',
-            url: 'https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=BTC%2CEUR',
+            url: 'https://min-api.cryptocompare.com/data/price?fsym=EUR&tsyms=BTC,ETH',
             dataType: "json",
             success: function (data) {
                 console.log("Cryptocompare is working");
-                console.log(data)
-                $("#btc").text(data['BTC'])
-                $("#euro").text(data['EUR'])
+                console.log(data);
+                $("#btc").text(data['BTC']);
+                $("#eth").text(data['ETH']);
+                $("#euro").text(1.0);
             },
 
             error: function () {

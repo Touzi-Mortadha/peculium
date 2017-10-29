@@ -8,6 +8,24 @@
     });
 
 	$('#buy').on('input',function(e){
+		var price = 0.0;
+		if(document.getElementById("calculator-currency-btn").innerHTML =="Euro")
+		{
+			price=document.getElementById("euro").innerHTML;
+		}
+		else if(document.getElementById("calculator-currency-btn").innerHTML =="Bitcoin"){
+			price=document.getElementById("btc").innerHTML;
+		}
+		else if(document.getElementById("calculator-currency-btn").innerHTML =="Ethereum"){
+			price=document.getElementById("eth").innerHTML;
+		}
+		$("#pay").val($(this).val()*price);
+	});
+	$('.calculator-currency').on('click',function(e){
+		var curr = $(this).data('code');
+		var text = $(this).text();
+		$("#calculator-currency-btn").attr('data-code', curr).html(text);
+		console.log("********** changed *************");
 		var price = 0;
 		if(document.getElementById("calculator-currency-btn").innerHTML =="Euro")
 		{
@@ -19,13 +37,7 @@
 		else if(document.getElementById("calculator-currency-btn").innerHTML =="Ethereum"){
 			price=document.getElementById("eth").innerHTML;
 		}
-		$("#pay").val(Math.ceil($(this).val()*price));
-	});
-
-	$('.calculator-currency').on('click',function(e){
-		var curr = $(this).data('code');
-		var text = $(this).text();
-		$("#calculator-currency-btn").attr('data-code', curr).html(text);
+		$("#pay").val(Math.ceil($("#buy").val()*price));
 	});
 
 	// Get BTC value
