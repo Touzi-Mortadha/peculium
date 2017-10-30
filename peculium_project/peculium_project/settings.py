@@ -165,7 +165,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL CONFIGURATION #
 #######################
 
-DEFAULT_EMAIL_FROM = 'roukhai'
+DEFAULT_EMAIL_FROM = 'Peculium'
 DEFAULT_EMAIL_BCC = ''
 SERVER_EMAIL = ''
 

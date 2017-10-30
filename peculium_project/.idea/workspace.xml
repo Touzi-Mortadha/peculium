@@ -31,7 +31,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="signup.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="signup.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/Login/signup.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-677">
@@ -111,13 +111,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/peculium_project/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="175" column="36" lean-forward="true" selection-start-line="175" selection-start-column="36" selection-end-line="175" selection-end-column="36" />
+            <state relative-caret-position="160">
+              <caret line="167" column="30" lean-forward="false" selection-start-line="167" selection-start-column="30" selection-end-line="167" selection-end-column="30" />
               <folding>
-                <marker date="1509382586185" expanded="true" signature="319:320" ph="..." />
+                <marker date="1509384910513" expanded="true" signature="319:320" ph="..." />
               </folding>
             </state>
           </provider>
@@ -207,9 +207,9 @@
         <option value="$PROJECT_DIR$/templates/activation_email/account_activation_email.html" />
         <option value="$PROJECT_DIR$/templates/activation_email/content.txt" />
         <option value="$PROJECT_DIR$/templates/profile.html" />
-        <option value="$PROJECT_DIR$/peculium_project/settings.py" />
         <option value="$PROJECT_DIR$/apps/accounts/views.py" />
         <option value="$PROJECT_DIR$/templates/Login/signup.html" />
+        <option value="$PROJECT_DIR$/peculium_project/settings.py" />
       </list>
     </option>
   </component>
@@ -314,7 +314,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="apps" />
+              <option name="myItemId" value="peculium_project" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -329,10 +329,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="apps" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="accounts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1030,16 +1026,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/peculium_project/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="175" column="36" lean-forward="true" selection-start-line="175" selection-start-column="36" selection-end-line="175" selection-end-column="36" />
-          <folding>
-            <marker date="1509382586185" expanded="true" signature="319:320" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/accounts/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
@@ -1063,6 +1049,16 @@
         <state relative-caret-position="-677">
           <caret line="80" column="42" lean-forward="false" selection-start-line="80" selection-start-column="42" selection-end-line="80" selection-end-column="42" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/peculium_project/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="167" column="30" lean-forward="false" selection-start-line="167" selection-start-column="30" selection-end-line="167" selection-end-column="30" />
+          <folding>
+            <marker date="1509384910513" expanded="true" signature="319:320" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
