@@ -30,6 +30,7 @@ import datetime
 from django.core.mail import EmailMultiAlternatives
 from django.core.mail import send_mail
 
+
 class IndexView(TemplateView):
     template_name = "home.html"
 
@@ -62,12 +63,12 @@ class signup(View):
             user.is_active = False
             user.save()
             if form.data['public_rib']:
-                user.userprofile.public_rib=form.cleaned_data.get('public_rib')
+                user.userprofile.public_rib = form.cleaned_data.get('public_rib')
                 user.userprofile.save()
             current_site = get_current_site(request)
             subject = 'Activate Your Peculium Account'
             toemail = form.cleaned_data.get('email')
-            msg_plain = render_to_string('activation_email/content.txt',{
+            msg_plain = render_to_string('activation_email/content.txt', {
                 'user': user,
                 'domain': current_site.domain,
                 'uid': urlsafe_base64_encode(force_bytes(user.pk)),
@@ -86,7 +87,6 @@ class signup(View):
                 [toemail],
                 html_message=message,
             )
-
 
             return redirect('account_activation_sent')
         return render(request, self.template_name, {'form': form})
@@ -113,7 +113,7 @@ class UpdateUserView(TemplateView):
             obj = form.save(commit=False)
             obj.TCL_USED = tmp + form.cleaned_data['TCL_USED']
             activ = self.request.user.userprofile
-            activ.buy=True
+            activ.buy = True
             activ.save()
             obj.save()
             transaction = Transaction()
@@ -129,7 +129,10 @@ class UpdateUserView(TemplateView):
                    'number_of_tokens': inst.number_of_PCL,
                    'user': self.request.user,
                    'user_buy': user_buy,
-                   'form': form}
+                   'form': form,
+                   'banc_rib': str(userr.userprofile.banc_rib),
+                   'BTC_rib': str(userr.userprofile.BTC_rib),
+                   'ETH_rib': str(userr.userprofile.ETH_rib)}
         return render(request, self.template_name, context)
 
     def get(self, request, *args, **kwargs):
@@ -142,8 +145,12 @@ class UpdateUserView(TemplateView):
                    'number_of_tokens': inst.number_of_PCL,
                    'TCL_USED': inst.TCL_USED,
                    'user': self.request.user,
-                   'user_buy':user_buy,
-                   'form': form}
+                   'user_buy': user_buy,
+                   'form': form,
+                   'banc_rib': str(userr.userprofile.banc_rib),
+                   'BTC_rib': str(userr.userprofile.BTC_rib),
+                   'ETH_rib': str(userr.userprofile.ETH_rib)}
+
         return TemplateResponse(request, self.template_name, context)
 
         # def get_context_data(self, **kwargs):

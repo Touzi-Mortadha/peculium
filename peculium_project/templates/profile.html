@@ -6,7 +6,7 @@
 <!--[if IE 9 ]>    <html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!-->
 <html class="no-js" lang="en"><!--<![endif]-->
-<!-- the "no-js" class is for Modernizr. -->
+                              <!-- the "no-js" class is for Modernizr. -->
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -53,13 +53,22 @@
     <style>.theme_option {
         display: none !important;
     }</style>
+
     <script>
         var current_user =
         {{ user.id }}
+
+
+        var banc_rib = '{{ banc_rib }}'
+
+        var BTC_rib = '{{ BTC_rib }}'
+
+        var ETH_rib = '{{ ETH_rib }}'
     </script>
+
 </head>
 
-<!-- Class ( site_boxed - dark - preloader1 - preloader2 - preloader3 - light_header - dark_sup_menu - menu_button_mode - transparent_header - header_on_side ) -->
+                              <!-- Class ( site_boxed - dark - preloader1 - preloader2 - preloader3 - light_header - dark_sup_menu - menu_button_mode - transparent_header - header_on_side ) -->
 <body class="preloader3 light_header">
 <div id="preloader">
     <div class="spinner">
@@ -75,7 +84,7 @@
 
     <section class="content_section page_title">
         <div class="content clearfix">
-            <h1 class="">Peculium</h1>
+            <h1 class="">Peculium </h1>
 
             <div class="breadcrumbs">
                 <span> {{ user.username }} </span>
@@ -191,20 +200,24 @@
                                             <div class="counter animated fadeInDown visible" data-animation="fadeInDown"
                                                  data-animation-delay="300">
                                                 <span class="icon"><img src='{% static "new_pcl/images/icon/eth.png" %}'
-                                                                        width="40"></span>
-                                                <span class="value" data-speed="4000" data-from="0" data-to="1"
-                                                      id="eth">1</span>
-                                                <span class="title">ETH</span>
+                                                                        width="40"></span> <span class="value"
+                                                                                                 data-speed="4000"
+                                                                                                 data-from="0"
+                                                                                                 data-to="1"
+                                                                                                 id="eth">1</span> <span
+                                                    class="title">ETH</span>
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="counter animated fadeInDown visible" data-animation="fadeInDown"
                                                  data-animation-delay="600">
                                                 <span class="icon"><img src='{% static "new_pcl/images/icon/btc.png" %}'
-                                                                        width="40"></span>
-                                                <span class="value" data-speed="4000" data-from="0" data-to="0"
-                                                      id="btc">0</span>
-                                                <span class="title">BTC</span>
+                                                                        width="40"></span> <span class="value"
+                                                                                                 data-speed="4000"
+                                                                                                 data-from="0"
+                                                                                                 data-to="0"
+                                                                                                 id="btc">0</span> <span
+                                                    class="title">BTC</span>
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
@@ -212,10 +225,9 @@
                                                  data-animation-delay="900">
                                                 <span class="icon"><img
                                                         src='{% static "new_pcl/images/icon/dollar.png" %}'
-                                                        width="40"></span>
-                                                <span class="value" data-speed="4000" data-from="0" data-to="0"
-                                                      id="euro"></span>
-                                                <span class="title">EUR</span>
+                                                        width="40"></span> <span class="value" data-speed="4000"
+                                                                                 data-from="0" data-to="0"
+                                                                                 id="euro"></span> <span class="title">EUR</span>
                                             </div>
                                         </div>
                                     </div>
@@ -231,19 +243,17 @@
                                     <div class="welcome_banner boxed_colored">
                                         <div class="content clearfix">
                                             <form class="hm_contact_form full_contact_form"
-                                                  method="post">{% csrf_token %}
+                                                  method="post" id="invest_form">{% csrf_token %}
                                                 <div class="row">
                                                     <div class="col-sm-5">
                                                         <div class="form_row clearfix">
                                                             <label for="buy" style="color: #fff; text-align: center">
-                                                                <span class="hm_field_name">Your buy</span>
-                                                            </label>
+                                                                <span class="hm_field_name">Your buy</span> </label>
                                                             <input class="hm_input_text" name="TCL_USED" id="buy"
                                                                    type="text"
-                                                                   value="0">
-                                                            <label for="buy" style="color: #fff; text-align: center">
-                                                                <span class="hm_field_name">PCL</span>
-                                                            </label>
+                                                                   value="0"> <label for="buy"
+                                                                                     style="color: #fff; text-align: center">
+                                                            <span class="hm_field_name">PCL</span> </label>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-2 hidden-xs">
@@ -270,12 +280,11 @@
                                                     <div class="col-sm-5">
                                                         <div class="form_row clearfix">
                                                             <label for="pay" style="color: #fff; text-align: center">
-                                                                <span class="hm_field_name">Your pay</span>
-                                                            </label>
+                                                                <span class="hm_field_name">Your pay</span> </label>
                                                             <input class="hm_input_text" name="pay" id="pay" type="text"
                                                                    disabled readonly value="0"
-                                                                   data-price="100">
-                                                            <label for="pay" style="color: #fff; text-align: center">
+                                                                   data-price="100"> <label for="pay"
+                                                                                            style="color: #fff; text-align: center">
                                                                 <span class="hm_field_name">
                                                                     <div class="btn-group">
                                                                         <button data-toggle="dropdown" type="button"
@@ -296,8 +305,7 @@
                                                                         </ul>
                                                                     </div>
 
-                                                                </span>
-                                                            </label>
+                                                                </span> </label>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12 text-center">
@@ -308,7 +316,8 @@
                                                         </button>
                                                         <div id="bay-tokens"
                                                              class="zoom-anim-dialog small-dialog mfp-hide">
-                                                            <h2 class="text-center">Your code here</h2>
+                                                            <div class="text-center" id="ribs"><h1>You can not invest 0 PCL</h1>
+                                                            </div>
                                                         </div>
                                                     </div>
 
@@ -381,8 +390,10 @@
                     <div><h4>Your tokens</h4>
                         {% if not user.userprofile.public_rib %}
 
-                            <div class="alert alert-warning"><a href="#" style="font-size: 1.5rem">
-                                Please setup your Ethereum address to receive PCL tokens</a></div>
+                            <div class="alert alert-warning"><a href="#" style="font-size: 1.5rem"> Please setup your
+                                                                                                    Ethereum address to
+                                                                                                    receive PCL
+                                                                                                    tokens</a></div>
                             </div>
 
                         {% endif %}
@@ -403,20 +414,20 @@
                                target="_blank"><i class="ico-twitter"></i></a></li>
                         <li><a href="#" title="Facebook"
                                target="_blank"><i class="ico-facebook"></i></a></li><!-- li-->
-                        <!--   a(href='https://medium.com/@lydian', alt='medium', title='medium', target='_blank')-->
-                        <!--     i.fa.fa-medium--><!-- li-->
-                        <!--   a(href='https://bitcointalk.org/index.php?topic=9999999.0', alt='btc', title='btc', target='_blank')-->
-                        <!--     i.fa.fa-btc-->
+                                                                                    <!--   a(href='https://medium.com/@lydian', alt='medium', title='medium', target='_blank')-->
+                                                                                    <!--     i.fa.fa-medium--><!-- li-->
+                                                                                    <!--   a(href='https://bitcointalk.org/index.php?topic=9999999.0', alt='btc', title='btc', target='_blank')-->
+                                                                                    <!--     i.fa.fa-btc-->
                         <li><a href="#" title="mail" target="_blank"><i class="ico-mail5"></i></a></li>
                     </ul>
                 </div>
             </div>
         </div>
-</div>
-</section>
-<!-- End Accordion -->
 
-{#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+    </section>
+    <!-- End Accordion -->
+
+    {#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
 
 </div>
 <!-- End wrapper -->

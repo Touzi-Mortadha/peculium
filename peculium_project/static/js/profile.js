@@ -132,5 +132,17 @@ function Cryptocompare() {
 setInterval(Cryptocompare, 1000);
 
 /* ********************************************** */
+/* ******************* SUBMIT FORM *************************** */
+
+$('#button_submit').on('click',function(){
+
+		$("#invest_form").submit();
+	});
+
+/* ********************************************** */
+
+
+
+
 
 
