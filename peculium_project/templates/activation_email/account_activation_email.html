@@ -1,9 +1,17 @@
-{% autoescape off %}
-    <h1>Hi {{ user.username }},</h1>
+{% autoescape on %}
 
-    Please click on the link below to confirm your registration:
 
-    http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
-<h1 style="color: #CD5C5C">hahahhahaha</h1>
+
+    <center>
+        <h1 style="color: #0d638f">PECULIUM : Confirm your email</h1>
+    </center>
+    <h4>Hi {{ user.username }},</h4>
+    <h5>Please follow this <a href="http://{{ domain }}{% url 'activate' uidb64=uid token=token %}">link</a> in order to confirm your email.</h5>
+    <h5>Feel free to join our new <a href="https://peculium.slack.com/join/shared_invite/enQtMjU3ODE2OTE3MzkzLWZiNjc2NDU1ZjVjNDAyYTVmYTQwYTczZGI5NTY0YjA4Y2Q5YzgwNzU3MzQ2MzAwNjFmNDE2NWEwNTY0NzQ4MjQ">Telegram Channel</a>
+        or on <a href="https://peculium.slack.com/join/shared_invite/enQtMjU3ODE2OTE3MzkzLWZiNjc2NDU1ZjVjNDAyYTVmYTQwYTczZGI5NTY0YjA4Y2Q5YzgwNzU3MzQ2MzAwNjFmNDE2NWEwNTY0NzQ4MjQ">SLACK</a></h5>
+
+    <h5>PECULIUM TOKENS HAVE NOT BEEN AND WILL NOT BE REGISTERED UNDER THE SECURITIES ACT OF 1933 OR UNDER THE SECURITIES LAWS OF ANY STATE OR FOREIGN JURISDICTION AND MAY NOT BE SOLD, TRANSFERRED OR DISPOSED OF EXCEPT AS PROVIDED IN THE WHITEPAPER.</h5>
+
+    Copyright © 2017. All Rights Reserved. Peculium SA Ltd
+
 {% endautoescape %}
-<h1 style="color: #CD5C5C">hahahhahaha</h1>

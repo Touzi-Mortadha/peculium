@@ -27,7 +27,8 @@ from .models import UserProfile, Transaction
 from .forms import SignUpForm
 from ..payment.forms import ConfigPCLForm, ConfigUsedTCLForm
 import datetime
-
+from django.core.mail import EmailMultiAlternatives
+from django.core.mail import send_mail
 
 class IndexView(TemplateView):
     template_name = "home.html"
@@ -65,16 +66,28 @@ class signup(View):
                 user.userprofile.save()
             current_site = get_current_site(request)
             subject = 'Activate Your Peculium Account'
+            toemail = form.cleaned_data.get('email')
+            msg_plain = render_to_string('activation_email/content.txt',{
+                'user': user,
+                'domain': current_site.domain,
+                'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                'token': account_activation_token.make_token(user),
+            })
             message = render_to_string('activation_email/account_activation_email.html', {
                 'user': user,
                 'domain': current_site.domain,
                 'uid': urlsafe_base64_encode(force_bytes(user.pk)),
                 'token': account_activation_token.make_token(user),
             })
-            # user.email_user(subject, message)
-            toemail = form.cleaned_data.get('email')
-            email = EmailMessage(subject, body=message, to=[toemail])
-            email.send()
+            send_mail(
+                subject,
+                msg_plain,
+                'touzimortadha@gmail.com',
+                [toemail],
+                html_message=message,
+            )
+
+
             return redirect('account_activation_sent')
         return render(request, self.template_name, {'form': form})
 

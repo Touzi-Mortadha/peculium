@@ -1,0 +1,13 @@
+
+
+
+
+PECULIUM : Confirm your email
+
+    Hi {{ user.username }},
+    Please follow this <a href="http://{{ domain }}{% url 'activate' uidb64=uid token=token %}">link</a> in order to confirm your email.</h5>
+    Feel free to join our new Telegram Channel on SLACK
+
+    PECULIUM TOKENS HAVE NOT BEEN AND WILL NOT BE REGISTERED UNDER THE SECURITIES ACT OF 1933 OR UNDER THE SECURITIES LAWS OF ANY STATE OR FOREIGN JURISDICTION AND MAY NOT BE SOLD, TRANSFERRED OR DISPOSED OF EXCEPT AS PROVIDED IN THE WHITEPAPER.
+
+    Copyright © 2017. All Rights Reserved. Peculium SA Ltd
