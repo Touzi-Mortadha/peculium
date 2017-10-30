@@ -42,7 +42,7 @@ function GetNewAmmount() {
             success: function (data) {
                 console.log("GetNewAmmount is working");
                 console.log(data['PCL_amount']);
-                $("#amount").text(data['PCL_amount']*data['number_of_PCL']);
+                $("#amount").text(data['PCL_amount'] * data['number_of_PCL']);
                 $("#number_of_PCL").text(data['number_of_PCL'])
             },
 
@@ -74,16 +74,16 @@ function GetHistory() {
                 console.log("GetHistory is working");
                 console.log(data['transactions']);
 
-                var sorted_transactions =data['transactions'];
+                var sorted_transactions = data['transactions'];
                 sorted_transactions.forEach(function (element) {
 
-                    var date_of_trasaction=element.date_of_transaction;
-                    var time_of_transaction=element.time_of_transaction;
-                    var transaction_id=element.id;
-                    var amount_sent=element.amount_sent;
-                    var pcl_assignd=element.TCL_assigned;
-                    var verified= element.verified;
-                    $("#history").prepend("<tr style='text-align: center;'><td style='padding: 20px;'>".concat(date_of_trasaction,"</td><td style='padding: 20px;'>",time_of_transaction,"</td><td style='padding: 20px;' >",transaction_id,"</td><td style='padding: 20px;'>",amount_sent,"</td><td style='padding: 20px;'>",pcl_assignd,"</td><td>",verified,"</td></tr>"));
+                    var date_of_trasaction = element.date_of_transaction;
+                    var time_of_transaction = element.time_of_transaction;
+                    var transaction_id = element.id;
+                    var amount_sent = element.amount_sent;
+                    var pcl_assignd = element.TCL_assigned;
+                    var verified = element.verified;
+                    $("#history").prepend("<tr style='text-align: center;'><td style='padding: 20px;'>".concat(date_of_trasaction, "</td><td style='padding: 20px;'>", time_of_transaction, "</td><td style='padding: 20px;' >", transaction_id, "</td><td style='padding: 20px;'>", amount_sent, "</td><td style='padding: 20px;'>", pcl_assignd, "</td><td>", verified, "</td></tr>"));
                 });
             },
 
@@ -98,13 +98,8 @@ function GetHistory() {
 jQuery(document).ready(GetHistory);
 
 
-
-
 /* ***************************************************** */
 /* ****************** Cryptocompare *********************************** */
-
-
-
 
 
 function Cryptocompare() {
@@ -134,10 +129,11 @@ setInterval(Cryptocompare, 1000);
 /* ********************************************** */
 /* ******************* SUBMIT FORM *************************** */
 
-$('#button_submit').on('click',function(){
+$(document).on('click', '#button_submit', function () {
 
-		$("#invest_form").submit();
-	});
+    $("#invest_form").submit();
+
+});
 
 /* ********************************************** */
 

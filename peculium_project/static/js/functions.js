@@ -12,15 +12,15 @@
 		if(document.getElementById("calculator-currency-btn").innerHTML =="Euro")
 		{
 			price=document.getElementById("euro").innerHTML;
-			$('#ribs').html("<h1>Our BANC RIB</h1>".concat("<h4>",banc_rib.toString(),"</h4>","<button class='main_button color1 medium_btn' id='button_submit'>Invest </button>"));
+			$('#ribs').html("<h1>Our BANC RIB</h1>".concat("<h4>",banc_rib.toString(),"</h4>","<button class='main_button color1 medium_btn' id='button_submit' type='submit'>Invest </button>"));
 		}
 		else if(document.getElementById("calculator-currency-btn").innerHTML =="Bitcoin"){
 			price=document.getElementById("btc").innerHTML;
-			$('#ribs').html("<h1>Our BTC RIB</h1>".concat("<h4>",BTC_rib.toString(),"</h4>","<button class='main_button color1 medium_btn' id='button_submit'>Invest </button>"));
+			$('#ribs').html("<h1>Our BTC RIB</h1>".concat("<h4>",BTC_rib.toString(),"</h4>","<button class='main_button color1 medium_btn' id='button_submit' type='submit'>Invest </button>"));
 		}
 		else if(document.getElementById("calculator-currency-btn").innerHTML =="Ethereum"){
 			price=document.getElementById("eth").innerHTML;
-			$('#ribs').html("<h1>Our ETH RIB</h1>".concat("<h4>",ETH_rib.toString(),"</h4>","<button class='main_button color1 medium_btn' id='button_submit'>Invest </button>"));
+			$('#ribs').html("<h1>Our ETH RIB</h1>".concat("<h4>",ETH_rib.toString(),"</h4>","<button class='main_button color1 medium_btn' id='button_submit' type='submit'>Invest </button>"));
 
 		}
 		$("#pay").val($(this).val()*price);
@@ -34,17 +34,17 @@
 		if(document.getElementById("calculator-currency-btn").innerHTML =="Euro")
 		{
 			price=document.getElementById("euro").innerHTML;
-			$('#ribs').html("<h1>Our BANC RIB</h1>".concat("<h4>",banc_rib.toString(),"</h4>","<button class='main_button color1 medium_btn' id='button_submit' >Invest </button>"));
+			$('#ribs').html("<h1>Our BANC RIB</h1>".concat("<h4>",banc_rib.toString(),"</h4>","<button class='main_button color1 medium_btn' id='button_submit' type='submit' >Invest </button>"));
 		}
 		else if(document.getElementById("calculator-currency-btn").innerHTML =="Bitcoin"){
 			price=document.getElementById("btc").innerHTML;
-			$('#ribs').html("<h1>Our BTC RIB</h1>".concat("<h4>",BTC_rib.toString(),"</h4>","<button class='main_button color1 medium_btn' id='button_submit'>Invest </button>"));
+			$('#ribs').html("<h1>Our BTC RIB</h1>".concat("<h4>",BTC_rib.toString(),"</h4>","<button class='main_button color1 medium_btn' id='button_submit' type='submit'>Invest </button>"));
 		}
 		else if(document.getElementById("calculator-currency-btn").innerHTML =="Ethereum"){
 			price=document.getElementById("eth").innerHTML;
-			$('#ribs').html("<h1>Our ETH RIB</h1>".concat("<h4>",ETH_rib.toString(),"</h4>","<button class='main_button color1 medium_btn' id='button_submit'>Invest </button>"));
+			$('#ribs').html("<h1>Our ETH RIB</h1>".concat("<h4>",ETH_rib.toString(),"</h4>","<button class='main_button color1 medium_btn' id='button_submit' type='submit'>Invest </button>"));
 		}
-		$("#pay").val(Math.ceil($("#buy").val()*price));
+		$("#pay").val($("#buy").val()*price);
 	});
 
 	// Get BTC value
