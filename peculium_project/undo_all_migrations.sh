@@ -19,7 +19,7 @@ python manage.py migrate
 
 echo ">> load DB"
 #./manage.py dumpdata > db.json
-#./manage.py loaddata db.json
+./manage.py loaddata db.json
 #echo ">> create super user"
 
 #soteqapp@gmail.com
