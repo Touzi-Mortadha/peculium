@@ -83,7 +83,7 @@ class signup(View):
             send_mail(
                 subject,
                 msg_plain,
-                'touzimortadha@gmail.com',
+                'peculium',
                 [toemail],
                 html_message=message,
             )
