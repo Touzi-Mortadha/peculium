@@ -26,7 +26,7 @@ SECRET_KEY = '*yqlfi=11r=1hzzr+he4waf-@az1^s9)c$38#oweqb#d@%w@k@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["*",'http://privatesale.peculium.io/',]
 
 #######################
 # USER AUTHENTICATION #
