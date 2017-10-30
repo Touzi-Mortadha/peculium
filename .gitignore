@@ -37,3 +37,6 @@ ENV/
 # Mongo Explorer plugin:
 .idea/**/mongoSettings.xml
 
+*/migrations/*
+*/__pycache__/*
+*.pyc
