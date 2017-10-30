@@ -1225,12 +1225,8 @@
 				hoverElem : '.hoverdir_con'
 			}); 
 		});
-			
-		//---------------------------------------------> Counter
-		$('.counter').appear(function() {
-			$(this).children('.value').countTo();
-		});
-		
+
+
 		//---------------------------------------------> Masonry Blogs
 		$(".masonry_posts.colored_masonry .blog_grid_block").each(function(index, element) {
 			var bg_color = $(this).data("bg");
