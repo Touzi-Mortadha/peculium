@@ -39,4 +39,3 @@ ENV/
 
 */migrations/*
 */__pycache__/*
-*.pyc
