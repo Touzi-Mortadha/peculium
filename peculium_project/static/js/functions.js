@@ -19,7 +19,7 @@
         }
         else if (document.getElementById("calculator-currency-btn").innerHTML == "Ethereum") {
             price = (document.getElementById("eth").innerHTML) * amount;
-            $('#ribs').html("<h1>Our ETH RIB</h1>".concat("<h4>", ETH_rib.toString(), "</h4>", "<button class='main_button color1 medium_btn' id='button_submit' type='submit'>Invest </button>"));
+            $('#ribs').html("<h1>Our Etherium key</h1>".concat("<h4>", ETH_rib.toString(), "</h4>", "<button class='main_button color1 medium_btn' id='button_submit' type='submit'>Invest </button>"));
 
         }
         $("#pay").val($(this).val() * price);
@@ -40,7 +40,7 @@
         }
         else if (document.getElementById("calculator-currency-btn").innerHTML == "Ethereum") {
             price = (document.getElementById("eth").innerHTML) * amount;
-            $('#ribs').html("<h1>Our ETH RIB</h1>".concat("<h4>", ETH_rib.toString(), "</h4>", "<button class='main_button color1 medium_btn' id='button_submit' type='submit'>Invest </button>"));
+            $('#ribs').html("<h1>Our Etherium key</h1>".concat("<h4>", ETH_rib.toString(), "</h4>", "<button class='main_button color1 medium_btn' id='button_submit' type='submit'>Invest </button>"));
         }
         $("#pay").val($("#buy").val() * price);
     });

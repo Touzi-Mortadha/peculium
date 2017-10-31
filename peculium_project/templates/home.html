@@ -60,7 +60,25 @@
 
     <section class="content_section page_title">
         <div class="content clearfix">
-            <h1 style="font-size: 40px; text-transform: uppercase">Peculium</h1>
+            <h1 style="font-size: 40px; text-transform: uppercase"><a href='{% url "index_view" %}'>Peculium</a></h1>
+        {% if request.user.is_authenticated %}
+            <div class="breadcrumbs">
+                <div class="dropdown">
+                    <button class=" main_button color2 large_btn bottom_space btn btn-primary dropdown-toggle"
+                            type="button" data-toggle="dropdown">{{ user.username }}
+                        <span class="caret"></span></button>
+                    <div class="dropdown-menu">
+                        <div class="user_panel" align="center">
+                            <a href='{% url "logout" %}'>logout</a>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+            {% endif %}
+
         </div>
     </section>
     <section>
