@@ -14,4 +14,4 @@ class ConfiTCLSerializer(serializers.ModelSerializer):
 class GetCurrencySerializer(serializers.ModelSerializer):
     class Meta:
         model = GetCurrency
-        fields =('Ethereum','Bitcoin','Euro')
+        fields =('Ethereum','Bitcoin','Euro',)

@@ -106,18 +106,20 @@ function Cryptocompare() {
 
     $.ajax({
             type: 'GET',
-            url: 'https://min-api.cryptocompare.com/data/price?fsym=EUR&tsyms=BTC,ETH',
+            url: '/payment/api/currency/',
             dataType: "json",
             success: function (data) {
                 console.log("Cryptocompare is working");
                 console.log(data);
-                $("#btc").text(data['BTC']);
-                $("#eth").text(data['ETH']);
-                $("#euro").text(1.0);
+                console.log(data[0]['Bitcoin'])
+                $("#btc").text(data[0]['Bitcoin']);
+                $("#eth").text(data[0]['Ethereum']);
+                $("#euro").text(data[0]['Euro']);
             },
 
-            error: function () {
+            error: function (error) {
                 console.log("Cryptocompare is not working");
+                console.log(error)
             }
         }
     );
