@@ -6,7 +6,7 @@
 <!--[if IE 9 ]>    <html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!-->
 <html class="no-js" lang="en"><!--<![endif]-->
-                              <!-- the "no-js" class is for Modernizr. -->
+<!-- the "no-js" class is for Modernizr. -->
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -55,7 +55,8 @@
     }</style>
 
     <script>
-        var current_user = {{ user.id }}
+        var current_user =
+        {{ user.id }}
 
 
         var banc_rib = '{{ banc_rib }}'
@@ -69,7 +70,7 @@
 
 </head>
 
-                              <!-- Class ( site_boxed - dark - preloader1 - preloader2 - preloader3 - light_header - dark_sup_menu - menu_button_mode - transparent_header - header_on_side ) -->
+<!-- Class ( site_boxed - dark - preloader1 - preloader2 - preloader3 - light_header - dark_sup_menu - menu_button_mode - transparent_header - header_on_side ) -->
 <body class="preloader3 light_header">
 <div id="preloader">
     <div class="spinner">
@@ -85,27 +86,22 @@
 
     <section class="content_section page_title">
         <div class="content clearfix">
-            <h1 class="">Peculium </h1>
+            <h1 class=""><a href='{% url "index_view" %}'>Peculium</a></h1>
 
             <div class="breadcrumbs">
 
 
-
-
-
-
-
                 <div class="dropdown">
-    <button class=" main_button color2 large_btn bottom_space btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{ user.username }}
-    <span class="caret"></span></button>
-    <div class="dropdown-menu">
-     <div class="user_panel" align="center">
-    <a href='{% url "logout" %}'>logout</a>
-</div>
+                    <button class=" main_button color2 large_btn bottom_space btn btn-primary dropdown-toggle"
+                            type="button" data-toggle="dropdown">{{ user.username }}
+                        <span class="caret"></span></button>
+                    <div class="dropdown-menu">
+                        <div class="user_panel" align="center">
+                            <a href='{% url "logout" %}'>logout</a>
+                        </div>
 
-    </div>
-  </div>
-
+                    </div>
+                </div>
 
 
             </div>
@@ -336,7 +332,8 @@
                                                         </button>
                                                         <div id="bay-tokens"
                                                              class="zoom-anim-dialog small-dialog mfp-hide">
-                                                            <div class="text-center" id="ribs"><h1>You can not invest 0 PCL</h1>
+                                                            <div class="text-center" id="ribs"><h1>You can not invest 0
+                                                                PCL</h1>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -406,38 +403,26 @@
 
                     </div>
                     <hr>
-
-                    <div><h4>Your tokens</h4>
                         {% if not user.userprofile.public_rib %}
 
-                            <div class="alert alert-warning"><a href="{% url 'public-rib' %}" style="font-size: 1.5rem"> Please setup your
-                                                                                                    Ethereum address to
-                                                                                                    receive PCL
-                                                                                                    tokens</a></div>
+                            <div class="alert alert-warning"><a href="{% url 'public-rib' %}" style="font-size: 1.5rem">
+                                Please setup your
+                                Ethereum address to
+                                receive PCL
+                                tokens</a></div>
                             </div>
 
                         {% endif %}
-                    <div class="item ng-hide">
-                        <table class="table personalinfo no-border">
-                            <tbody>
-                            <tr>
-                                <td class="ng-binding">Tokens you hold</td>
-                                <th class="lead text-right ng-binding">0</th>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <a href="#" class="btn btn-block btn-lg btn-theme ng-binding">Buy tokens</a>
                     <hr>
                     <ul class="list-inline social-buttons">
                         <li><a href="#" title="Twitter"
                                target="_blank"><i class="ico-twitter"></i></a></li>
                         <li><a href="#" title="Facebook"
                                target="_blank"><i class="ico-facebook"></i></a></li><!-- li-->
-                                                                                    <!--   a(href='https://medium.com/@lydian', alt='medium', title='medium', target='_blank')-->
-                                                                                    <!--     i.fa.fa-medium--><!-- li-->
-                                                                                    <!--   a(href='https://bitcointalk.org/index.php?topic=9999999.0', alt='btc', title='btc', target='_blank')-->
-                                                                                    <!--     i.fa.fa-btc-->
+                        <!--   a(href='https://medium.com/@lydian', alt='medium', title='medium', target='_blank')-->
+                        <!--     i.fa.fa-medium--><!-- li-->
+                        <!--   a(href='https://bitcointalk.org/index.php?topic=9999999.0', alt='btc', title='btc', target='_blank')-->
+                        <!--     i.fa.fa-btc-->
                         <li><a href="#" title="mail" target="_blank"><i class="ico-mail5"></i></a></li>
                     </ul>
                 </div>
