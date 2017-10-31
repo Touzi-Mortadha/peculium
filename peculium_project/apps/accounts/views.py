@@ -24,7 +24,7 @@ from rest_framework import viewsets
 from ..payment.serializers import ConfiTCLSerializer
 from .serializers import UserProfileSerializer
 from .models import UserProfile, Transaction
-from .forms import SignUpForm, PublicRibForm
+from .forms import SignUpForm, PublicRibForm, AdminRibsForm
 from ..payment.forms import ConfigPCLForm, ConfigUsedTCLForm
 import datetime
 from django.core.mail import EmailMultiAlternatives
@@ -174,15 +174,26 @@ class UpdateAdminView(TemplateView):
         if form.is_valid():
             form.save()
         return TemplateResponse(request, self.template_name,
-                                {'form': form, 'user': self.request.user, 'amount': inst.PCL_amount,
-                                 'number_of_tokens': inst.number_of_PCL})
+                                {'form': form,
+                                 'user': self.request.user,
+                                 'amount': inst.PCL_amount,
+                                 'number_of_tokens': inst.number_of_PCL,
+                                 'banc_rib': request.user.userprofile.banc_rib,
+                                 'BTC_rib': request.user.userprofile.BTC_rib,
+                                 'ETH_rib': request.user.userprofile.ETH_rib
+                                 })
 
     def get(self, request, *args, **kwargs):
         userr = User.objects.get(username=request.user)
         inst = ConfiTCL.objects.get(user=userr)
         form = ConfigPCLForm(instance=inst)
-        context = {'form': form, 'user': self.request.user, 'amount': inst.PCL_amount,
-                   'number_of_tokens': inst.number_of_PCL}
+        context = {'form': form, 'user': self.request.user,
+                   'amount': inst.PCL_amount,
+                   'number_of_tokens': inst.number_of_PCL,
+                   'banc_rib': request.user.userprofile.banc_rib,
+                   'BTC_rib': request.user.userprofile.BTC_rib,
+                   'ETH_rib': request.user.userprofile.ETH_rib
+                   }
         return TemplateResponse(request, self.template_name, context)
 
         # def get_context_data(self, **kwargs):
@@ -212,20 +223,6 @@ def account_activation_sent(request):
     return render(request, 'activation_email/account_activation_sent.html')
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class AddPublicRibView(TemplateView):
     template_name = "public_rib.html"
 
@@ -235,7 +232,6 @@ class AddPublicRibView(TemplateView):
         return super().dispatch(*args, **kwargs)
 
     def post(self, request, *args, **kwargs):
-
         form = PublicRibForm(request.POST, instance=request.user)
         if form.is_valid():
             request.user.userprofile.public_rib = form.cleaned_data['public_rib']
@@ -255,13 +251,32 @@ class AddPublicRibView(TemplateView):
         return TemplateResponse(request, self.template_name, context)
 
 
+class UpdateRibsView(TemplateView):
+    template_name = "modify_ribs.html"
 
+    @method_decorator(user_passes_test(lambda u: u.is_superuser))
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
 
+    def post(self, request):
+        form = AdminRibsForm(request.POST, instance=request.user.userprofile)
+        if form.is_valid():
+            request.user.userprofile.BTC_rib = form.cleaned_data['BTC_rib']
+            request.user.userprofile.ETH_rib = form.cleaned_data['ETH_rib']
+            request.user.userprofile.banc_rib = form.cleaned_data['banc_rib']
+            request.user.userprofile.save()
 
+        return TemplateResponse(request, self.template_name, {'form': form,
+                                                              'user': request.user
+                                                              })
 
-
-
-
+    def get(self, request, *args, **kwargs):
+        form = AdminRibsForm(instance=request.user.userprofile)
+        context = {'form': form,
+                   'user': request.user
+                   }
+        return TemplateResponse(request, self.template_name, context)
 
 
 # API VIEWSETS

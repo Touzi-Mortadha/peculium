@@ -49,3 +49,20 @@ class PublicRibForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(PublicRibForm, self).__init__(*args, **kwargs)
         self.fields['public_rib'].widget.attrs.update({'class': 'form-control input-lg'})
+
+
+
+class AdminRibsForm(forms.ModelForm):
+    banc_rib=forms.CharField(max_length=254, help_text='Required. Enter a valid banc rib .', required=False)
+    BTC_rib=forms.CharField(max_length=254, help_text='Required. Enter a valid BTC rib .', required=False)
+    ETH_rib=forms.CharField(max_length=254, help_text='Required. Enter a valid ETH rib .', required=False)
+
+    class Meta:
+        model = User
+        fields = ('banc_rib', 'BTC_rib', 'ETH_rib',)
+
+    def __init__(self, *args, **kwargs):
+        super(AdminRibsForm, self).__init__(*args, **kwargs)
+        self.fields['banc_rib'].widget.attrs.update({'class': 'form-control input-lg'})
+        self.fields['BTC_rib'].widget.attrs.update({'class': 'form-control input-lg'})
+        self.fields['ETH_rib'].widget.attrs.update({'class': 'form-control input-lg'})
