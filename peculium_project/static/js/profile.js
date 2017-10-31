@@ -133,7 +133,16 @@ setInterval(Cryptocompare, 1000);
 
 $(document).on('click', '#button_submit', function () {
 
+    var available_amount= document.getElementById("amount").innerHTML;
+    var invested_amount= $("#buy").val() * amount
+
+    if (invested_amount <= available_amount) {
     $("#invest_form").submit();
+} else {
+   alert("Sorry You have exceeded th allowed amount")
+}
+
+
 
 });
 
