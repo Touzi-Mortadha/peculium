@@ -24,7 +24,7 @@ from rest_framework import viewsets
 from ..payment.serializers import ConfiTCLSerializer
 from .serializers import UserProfileSerializer
 from .models import UserProfile, Transaction
-from .forms import SignUpForm
+from .forms import SignUpForm, PublicRibForm
 from ..payment.forms import ConfigPCLForm, ConfigUsedTCLForm
 import datetime
 from django.core.mail import EmailMultiAlternatives
@@ -210,6 +210,58 @@ def activate(request, uidb64, token):
 
 def account_activation_sent(request):
     return render(request, 'activation_email/account_activation_sent.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class AddPublicRibView(TemplateView):
+    template_name = "public_rib.html"
+
+    @method_decorator(user_passes_test(lambda u: not u.is_superuser))
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+
+        form = PublicRibForm(request.POST, instance=request.user)
+        if form.is_valid():
+            request.user.userprofile.public_rib = form.cleaned_data['public_rib']
+            request.user.userprofile.save()
+            return redirect('profile')
+        context = {'user': self.request.user,
+                   'form': form,
+                   }
+        return render(request, self.template_name, context)
+
+    def get(self, request, *args, **kwargs):
+        form = PublicRibForm(instance=request.user)
+        context = {'user': self.request.user,
+                   'form': form,
+                   }
+
+        return TemplateResponse(request, self.template_name, context)
+
+
+
+
+
+
+
+
+
 
 
 # API VIEWSETS

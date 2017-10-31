@@ -89,7 +89,26 @@
             <h1 class="">Peculium </h1>
 
             <div class="breadcrumbs">
-                <span> {{ user.username }} </span>
+
+
+
+
+
+
+
+                <div class="dropdown">
+    <button class=" main_button color2 large_btn bottom_space btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{ user.username }}
+    <span class="caret"></span></button>
+    <div class="dropdown-menu">
+     <div class="user_panel" align="center">
+    <a href='{% url "logout" %}'>logout</a>
+</div>
+
+    </div>
+  </div>
+
+
+
             </div>
         </div>
     </section>
@@ -392,7 +411,7 @@
                     <div><h4>Your tokens</h4>
                         {% if not user.userprofile.public_rib %}
 
-                            <div class="alert alert-warning"><a href="#" style="font-size: 1.5rem"> Please setup your
+                            <div class="alert alert-warning"><a href="{% url 'public-rib' %}" style="font-size: 1.5rem"> Please setup your
                                                                                                     Ethereum address to
                                                                                                     receive PCL
                                                                                                     tokens</a></div>

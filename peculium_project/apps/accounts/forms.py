@@ -38,3 +38,14 @@ class SignUpForm(UserCreationForm):
 
 
 
+
+class PublicRibForm(forms.ModelForm):
+    public_rib=forms.CharField(max_length=254, help_text='Required. Enter a valid public rib .', required=False)
+
+    class Meta:
+        model = User
+        fields = ('public_rib',)
+
+    def __init__(self, *args, **kwargs):
+        super(PublicRibForm, self).__init__(*args, **kwargs)
+        self.fields['public_rib'].widget.attrs.update({'class': 'form-control input-lg'})

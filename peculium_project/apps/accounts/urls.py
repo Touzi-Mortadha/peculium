@@ -1,7 +1,7 @@
 from django.conf.urls import url, include
 from django.contrib.auth import views as auth_views
 from .views import IndexView, LoginUserView, UpdateUserView, LogoutUserView, account_activation_sent, \
-    activate, signup, UpdateAdminView, ConfiTCLViewSet, UserProfileViewSet
+    activate, signup, UpdateAdminView, ConfiTCLViewSet, UserProfileViewSet, AddPublicRibView
 
 pcl_list = ConfiTCLViewSet.as_view({
     'get': 'list',
@@ -30,6 +30,10 @@ urlpatterns = [
     # PROFILES
     url(r'^user/profile/', UpdateUserView.as_view(), name='profile'),
     url(r'^user/admin/$', UpdateAdminView.as_view(), name='admin'),
+
+    # SET PUBLIC RIB
+url(r'^user/public_rib/', AddPublicRibView.as_view(), name='public-rib'),
+
     # SIGN UP
     url(r'signup/$', signup.as_view(), name='signup'),
     # account activation sent

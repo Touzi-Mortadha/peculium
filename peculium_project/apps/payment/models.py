@@ -8,3 +8,9 @@ class ConfiTCL(models.Model):
     number_of_PCL = models.IntegerField(blank=True, null=True)
     PCL_amount = models.FloatField(blank=True, null=True)
     TCL_USED = models.IntegerField(blank=True, null=True)
+
+
+class GetCurrency(models.Model):
+    Ethereum = models.FloatField()
+    Bitcoin = models.FloatField()
+    Euro = models.FloatField()

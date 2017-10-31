@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8"/>
-    <title>Peculium | Password Reset </title>
+    <title>Peculium | Set Public Rib  </title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -48,11 +48,20 @@
 <div class="content" style="width: 600px">
 
 
-    <h3>Forgot password</h3>
+    <h3>Add ETH wallet number</h3>
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Submit</button>
+
+
+                                        {% for error in field.errors %}
+                                            <div class="alert alert-danger">
+                                                <strong>{{ error|escape }}</strong>
+                                            </div>
+                                        {% endfor %}
+
+
+    <button type="submit">Confirm</button>
   </form>
 
 
