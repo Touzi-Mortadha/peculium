@@ -6,7 +6,7 @@ from .models import UserProfile
 
 class SignUpForm(UserCreationForm):
     email = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.')
-    public_rib=forms.CharField(max_length=254, help_text='Required. Enter a valid public rib .', required=False)
+    public_rib=forms.CharField(max_length=254, help_text='Required. Enter a valid public key .', required=False)
 
     class Meta:
         model = User

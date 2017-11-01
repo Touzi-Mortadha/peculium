@@ -44,7 +44,7 @@
 <!-- END SIDEBAR TOGGLER BUTTON -->
 <!-- BEGIN LOGO -->
 <div class="logo">
-    <a href='{% url "index_view" %}' style="font-size: 40px">
+    <a href='{% url "profile" %}' style="font-size: 40px">
         PECULIUM
     </a>
 </div>
@@ -56,7 +56,13 @@
     <h3>Adress Public Ethereum</h3>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        <p>You are only able to buy PCL tokens using BTC and ETH for now.</p>
+        <p>The calculator is provided for your convenience. You can enter a number of PCL tokens you wish to buy and calculate the amount you would need to have in your account wallets.</p>
+        <p>If you are purchasing PCL tokens with any currency other than ETH, please note that price of PCL tokens would be calculated at the time of actual purchase of the PCL tokens and not at the time of transfer of the funds to your account wallets.</p>
+
+
+        <h6>Public key</h6>
+        {{ form.public_rib }}
 
 
         {% for error in field.errors %}

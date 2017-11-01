@@ -124,7 +124,7 @@ class UpdateUserView(TemplateView):
             transaction.save()
 
             return redirect('profile')
-        user_buy = UserProfile.objects.filter(buy=True).count()
+        user_buy = UserProfile.objects.all().count()
         context = {'amount': inst.PCL_amount,
                    'number_of_tokens': inst.number_of_PCL,
                    'user': self.request.user,

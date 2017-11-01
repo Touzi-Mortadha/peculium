@@ -131,7 +131,7 @@ function Cryptocompare() {
 
 
 }
-setInterval(Cryptocompare, 1000);
+setInterval(Cryptocompare, 5000);
 
 /* ********************************************** */
 /* ******************* SUBMIT FORM *************************** */

@@ -55,19 +55,18 @@
     }</style>
 
     <script>
-        var current_user =
-        {{ user.id }}
+        var current_user = {{ user.id }};
 
 
-        var banc_rib = '{{ banc_rib }}'
+        var banc_rib = '{{ banc_rib }}';
 
-        var BTC_rib = '{{ BTC_rib }}'
+        var BTC_rib = '{{ BTC_rib }}';
 
-        var ETH_rib = '{{ ETH_rib }}'
+        var ETH_rib = '{{ ETH_rib }}';
 
-        var amount = '{{ amount }}'
+        var amount = '{{ amount }}';
 
-        var PCL_used= '{{ TCL_USED }}'
+        var PCL_used = '{{ TCL_USED }}';
     </script>
 
 </head>
@@ -214,6 +213,7 @@
                                         </div>
                                     </div>
                                     <div class="counter_b clearfix" style="margin-top: 30px">
+                                        <p>https://www.coindesk.com/</p>
                                         <div class="col-sm-4">
                                             <div class="counter animated fadeInDown visible" data-animation="fadeInDown"
                                                  data-animation-delay="300">
@@ -242,7 +242,7 @@
                                             <div class="counter animated fadeInDown visible" data-animation="fadeInDown"
                                                  data-animation-delay="900">
                                                 <span class="icon"><img
-                                                        src='{% static "new_pcl/images/icon/dollar.png" %}'
+                                                        src='{% static "new_pcl/images/icon/euro.ico" %}'
                                                         width="40"></span> <span class="value" data-speed="4000"
                                                                                  data-from="0" data-to="0"
                                                                                  id="euro"></span> <span class="title">EUR</span>
@@ -267,7 +267,7 @@
                                                         <div class="form_row clearfix">
                                                             <label for="buy" style="color: #fff; text-align: center">
                                                                 <span class="hm_field_name">Your buy</span> </label>
-                                                            <input class="hm_input_text" name="TCL_USED" id="buy"
+                                                            <input class="hm_input_text" id="bonus"
                                                                    type="text"
                                                                    value="0"> <label for="buy"
                                                                                      style="color: #fff; text-align: center">
@@ -326,7 +326,18 @@
                                                                 </span> </label>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-12 text-center">
+                                                    <div class="col-md-5">
+                                                        <div class="form_row clearfix">
+                                                            <label for="buy" style="color: #fff; text-align: center">
+                                                                <span class="hm_field_name">Your bonus</span> </label>
+                                                            <input class="hm_input_text" name="TCL_USED" id="buy"
+                                                                   type="text"
+                                                                   value="0"> <label for="bonus"
+                                                                                     style="color: #fff; text-align: center">
+                                                            <span class="hm_field_name">PCL</span> </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2 text-center">
                                                         <button href="#bay-tokens"
                                                                 class="main_button color1 medium_btn popup-with-move-anim"
                                                                 type="submit">
@@ -405,30 +416,30 @@
 
                     </div>
                     <hr>
-                        {% if not user.userprofile.public_rib %}
+                    {% if not user.userprofile.public_rib %}
 
-                            <div class="alert alert-warning"><a href="{% url 'public-rib' %}" style="font-size: 1.5rem">
-                                Please setup your
-                                Ethereum address to
-                                receive PCL
-                                tokens</a></div>
-                            </div>
+                        <div class="alert alert-warning"><a href="{% url 'public-rib' %}" style="font-size: 1.5rem">
+                            Please setup your
+                            Ethereum address to
+                            receive PCL
+                            tokens</a></div>
+                        </div>
 
-                        {% endif %}
-                    <hr>
-                    <ul class="list-inline social-buttons">
-                        <li><a href="#" title="Twitter"
-                               target="_blank"><i class="ico-twitter"></i></a></li>
-                        <li><a href="#" title="Facebook"
-                               target="_blank"><i class="ico-facebook"></i></a></li><!-- li-->
-                        <!--   a(href='https://medium.com/@lydian', alt='medium', title='medium', target='_blank')-->
-                        <!--     i.fa.fa-medium--><!-- li-->
-                        <!--   a(href='https://bitcointalk.org/index.php?topic=9999999.0', alt='btc', title='btc', target='_blank')-->
-                        <!--     i.fa.fa-btc-->
-                        <li><a href="#" title="mail" target="_blank"><i class="ico-mail5"></i></a></li>
-                    </ul>
-                </div>
+                    {% endif %}
+                <hr>
+                <ul class="list-inline social-buttons">
+                    <li><a href="https://twitter.com/_Peculium" title="Twitter"
+                           target="_blank"><i class="ico-twitter"></i></a></li>
+                    <li><a href="https://www.facebook.com/PeculiumICO/" title="Facebook"
+                           target="_blank"><i class="ico-facebook"></i></a></li><!-- li-->
+                    <!--   a(href='https://medium.com/@lydian', alt='medium', title='medium', target='_blank')-->
+                    <!--     i.fa.fa-medium--><!-- li-->
+                    <!--   a(href='https://bitcointalk.org/index.php?topic=9999999.0', alt='btc', title='btc', target='_blank')-->
+                    <!--     i.fa.fa-btc-->
+                    {#                        <li><a href="https://github.com/PeculiumPCL/Peculium" title="mail" target="_blank"><i class="ico-github"></i></a></li>#}
+                </ul>
             </div>
+        </div>
 
 
     </section>
