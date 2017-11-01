@@ -11,15 +11,15 @@
         var price = 0.0;
         if (document.getElementById("calculator-currency-btn").innerHTML == "Euro") {
             price = amount;
-            $('#ribs').html("<h6>We have registered your purchase intention</h6><h6>It will be finalized on November 8, 2017</h6> <h6>thank you</h6>".concat("<button class='main_button color1 medium_btn' id='button_submit' type='submit'>Thank you </button>"));
+            $('#ribs').html("<h6>We have registered your purchase intention</h6><h6>It will be finalized on November 8, 2017</h6> <h6>thank you</h6>".concat("<button class='main_button color1 medium_btn' id='button_submit' type='submit'>Invest </button>"));
         }
         else if (document.getElementById("calculator-currency-btn").innerHTML == "Bitcoin") {
             price = (document.getElementById("btc").innerHTML) * amount;
-            $('#ribs').html("<h6>We have registered your purchase intention</h6><h6>It will be finalized on November 8, 2017</h6> <h6>thank you</h6>".concat("<button class='main_button color1 medium_btn' id='button_submit' type='submit'>Thank you </button>"));
+            $('#ribs').html("<h6>We have registered your purchase intention</h6><h6>It will be finalized on November 8, 2017</h6> <h6>thank you</h6>".concat("<button class='main_button color1 medium_btn' id='button_submit' type='submit'>Invest </button>"));
         }
         else if (document.getElementById("calculator-currency-btn").innerHTML == "Ethereum") {
             price = (document.getElementById("eth").innerHTML) * amount;
-            $('#ribs').html("<h6>We have registered your purchase intention</h6><h6>It will be finalized on November 8, 2017</h6> <h6>thank you</h6>".concat("<button class='main_button color1 medium_btn' id='button_submit' type='submit'>Thank you </button>"));
+            $('#ribs').html("<h6>We have registered your purchase intention</h6><h6>It will be finalized on November 8, 2017</h6> <h6>thank you</h6>".concat("<button class='main_button color1 medium_btn' id='button_submit' type='submit'>Invest </button>"));
 
         }
         $("#pay").val($(this).val() * price);
@@ -40,15 +40,15 @@
         var price = 0;
         if (document.getElementById("calculator-currency-btn").innerHTML == "Euro") {
             price = amount;
-            $('#ribs').html("<h1>Our BANC RIB</h1>".concat("<h4>", banc_rib.toString(), "</h4>", "<button class='main_button color1 medium_btn' id='button_submit' type='submit' >Invest </button>"));
+            $('#ribs').html("<h6>We have registered your purchase intention</h6><h6>It will be finalized on November 8, 2017</h6> <h6>thank you</h6>".concat("<button class='main_button color1 medium_btn' id='button_submit' type='submit'>Invest </button>"));
         }
         else if (document.getElementById("calculator-currency-btn").innerHTML == "Bitcoin") {
             price = (document.getElementById("btc").innerHTML )* amount;
-            $('#ribs').html("<h1>Our BTC RIB</h1>".concat("<h4>", BTC_rib.toString(), "</h4>", "<button class='main_button color1 medium_btn' id='button_submit' type='submit'>Invest </button>"));
+            $('#ribs').html("<h6>We have registered your purchase intention</h6><h6>It will be finalized on November 8, 2017</h6> <h6>thank you</h6>".concat("<button class='main_button color1 medium_btn' id='button_submit' type='submit'>Invest </button>"));
         }
         else if (document.getElementById("calculator-currency-btn").innerHTML == "Ethereum") {
             price = (document.getElementById("eth").innerHTML) * amount;
-            $('#ribs').html("<h1>Our Etherium key</h1>".concat("<h4>", ETH_rib.toString(), "</h4>", "<button class='main_button color1 medium_btn' id='button_submit' type='submit'>Invest </button>"));
+            $('#ribs').html("<h6>We have registered your purchase intention</h6><h6>It will be finalized on November 8, 2017</h6> <h6>thank you</h6>".concat("<button class='main_button color1 medium_btn' id='button_submit' type='submit'>Invest </button>"));
         }
         $("#pay").val($("#buy").val() * price);
     });
