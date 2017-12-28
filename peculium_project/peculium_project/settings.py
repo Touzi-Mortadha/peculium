@@ -9,8 +9,8 @@ https://docs.djangoproject.com/en/1.11/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
-# user peculium
-# pass:syspro0000
+# user **********
+# pass:**********
 
 import os
 
@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '*yqlfi=11r=1hzzr+he4waf-@az1^s9)c$38#oweqb#d@%w@k@'
+SECRET_KEY = '**********************************'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -172,9 +172,9 @@ SERVER_EMAIL = ''
 EMAIL_USE_SSL = False
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'roukhai'
-EMAIL_HOST_PASSWORD = 'Wolverine14$'
+EMAIL_HOST_USER = '******'
+EMAIL_HOST_PASSWORD = '********'
 EMAIL_PORT = 587
-API_KEY = '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'
+API_KEY = '******************************************************'
 
 CELERY_BROKER_URL = 'amqp://localhost'
